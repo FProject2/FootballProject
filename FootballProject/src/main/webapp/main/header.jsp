@@ -23,11 +23,7 @@
  
 	<!-- End Top Search -->
 	<div class="container"> 
-		<div class="attr-nav">
-			<ul>
-				<li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-			</ul>
-		</div> 
+		
 
 	<!-- Start Header Navigation -->
 	<div class="navbar-header">
@@ -36,7 +32,7 @@
 		</button>
 		
 		<a class="navbar-brand" href="#brand">
-			<img src="assets/images/logo.png" class="logo" alt="">
+			<!-- <img src="assets/images/logo.png" class="logo" alt=""> --><h4>Football-Play</h4>
 		</a>
 	</div>
 	<!-- End Header Navigation -->
@@ -45,11 +41,10 @@
 	<!-- navbar menu -->
 	<div class="collapse navbar-collapse" id="navbar-menu">
 		<ul class="nav navbar-nav navbar-right">
-		<li><a href="#home">Home</a></li>                    
-			<li><a href="#features">About</a></li>
-			<li><a href="#business">Service</a></li>
-			<li><a href="#work">Portfolio</a></li>
-			<li><a href="#test">Blog</a></li>
+		<li><a href="#home">구장예약</a></li>                    
+			<li><a href="#features">게시판</a></li>
+			<li><a href="#business">마이페이지</a></li>
+			<li><a href="#test">로그인</a></li>
 			<li><a href="#contact">Contact</a></li>
 		</ul>
 	</div><!-- /.navbar-collapse -->
