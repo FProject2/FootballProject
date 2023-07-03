@@ -110,7 +110,7 @@
 	
         	<div class="container"  style="text-align: center;">
 	            
-                <div class="head_title text-center fix">
+                <div class="head_title text-center fix" name="reserveTitle">
                     <h2 class="text-uppercase">구장 예약</h2>
                     <h5>날짜와 지역을 선택하고 구장을 예약하세요</h5>
                 </div>

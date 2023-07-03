@@ -13,6 +13,38 @@
                 <div class="container">
                     <div class="row">
                         <div class="widget_area">
+                        	<div class="col-md-3">
+                                <div class="widget_item widget_service sm-m-top-50">
+                                    <h5 class="text-white">서비스 지역</h5>
+                                    
+                                   	<div class="col-md-6">
+                                   		<ul class="m-top-20">
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 서울</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 경기</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 인천</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 강원</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 대전</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 충남/세종</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 충북</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 대구</a></li>
+                                        </ul>
+                                   	</div>
+                                   	<div class="col-md-6">
+                                   		<ul class="m-top-20">
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 경북</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 부산</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 울산</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 경남</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 광주</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 전남</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 전북</a></li>
+	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 제주</a></li>
+                                        </ul>
+                                   	</div>
+                                   
+                                </div><!-- End off widget item -->
+                            </div><!-- End off col-md-3 -->
+                        
                             <div class="col-md-3">
                                 <div class="widget_item widget_about">
                                     <h5 class="text-white">About Us</h5>
@@ -73,19 +105,7 @@
                                 </div><!-- End off widget item -->
                             </div><!-- End off col-md-3 -->
 
-                            <div class="col-md-3">
-                                <div class="widget_item widget_service sm-m-top-50">
-                                    <h5 class="text-white">Latest News</h5>
-                                    <ul class="m-top-20">
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Web Design</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> User Interface Design</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> E- Commerce</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Web Hosting</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Themes</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Support Forums</a></li>
-                                    </ul>
-                                </div><!-- End off widget item -->
-                            </div><!-- End off col-md-3 -->
+                            
 
                             <div class="col-md-3">
                                 <div class="widget_item widget_newsletter sm-m-top-50">

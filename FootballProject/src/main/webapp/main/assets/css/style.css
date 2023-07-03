@@ -1411,8 +1411,8 @@ work Section style
 }
 .widget_service li{
     font-size:13px;
-    border-bottom: 1px dashed #aaa;
-    padding-bottom: 10px;
+    /* border-bottom: 1px dashed #aaa;
+    padding-bottom: 10px; */
 }
 .widget_newsletter li a:hover i,
 .widget_latst_item_text:hover p,
