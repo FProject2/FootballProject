@@ -5,11 +5,59 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
+<!-- <style type="text/css">
 	.hello_slid img{
 		border-radius: 30px;
 	}
-</style>
+</style> -->
+<style type="text/css">
+	.hello_slid img{
+			border-radius: 30px;
+		}
+			.reserve td {
+				padding-top : 15px;
+			    padding-bottom: 20px;
+			}
+  
+       		.reserve .time, .reserve .content, .reserve .state{
+       			font-size: 20px;
+       			vertical-align:middle;
+       			color: black;
+       			font-family: 'Noto Sans KR', sans-serif;
+       		}
+       		
+       		.content{
+       			line-height: 17px;
+       		}
+
+       		.button-align{
+       			text-align: center;
+       			font-size: 15px;
+       			vertical-align:middle;
+       		}
+       		.top-space{
+       			max-height: 400px;
+       			overflow: auto;
+       			margin-top: 10px;
+       		}
+       		.top-space::-webkit-scrollbar {
+			    width: 10px;
+			}
+			.top-space::-webkit-scrollbar-thumb {
+			    background-color: rgb(180, 180, 180);
+			    border-radius: 10px;
+			}
+			.top-space::-webkit-scrollbar-track {
+			    background-color: #F5F5F5;
+			}
+			.state .btn-design{
+				border-radius:5px;
+				font-size: 13px;
+				background-color:rgb(64,128,96);
+				color:white;
+			}
+       		
+       </style>
 </head>
 <body>
 
@@ -62,16 +110,23 @@
 	
         	<div class="container"  style="text-align: center;">
 	            
-                <h4 style="margin-bottom: 30px;">구장 예약</h4>
-                <div>
-	        		<input type="button" value="날짜선택" class="btn btn-sm btn-outline-secondary" style="border-radius: 15px">
-	        		<input type="button" value="지역선택" class="btn btn-sm btn-outline-secondary" style="border-radius: 15px">
+                <div class="head_title text-center fix">
+                    <h2 class="text-uppercase">구장 예약</h2>
+                    <h5>날짜와 지역을 선택하고 구장을 예약하세요</h5>
+                </div>
+                <div class=text-left>
+	        		<input type="button" value="날짜선택" class="btn btn-sm btn-outline-secondary" style="border-radius: 10px;padding: 0.5rem 1rem;">
+	        		<input type="button" value="지역선택" class="btn btn-sm btn-outline-secondary" style="border-radius: 10px;padding: 0.5rem 1rem;">
+	        		<!-- search는 시간 남으면 -->
+	        		<input type="button" class="btn btn-sm" value="검색" style="float: right;margin-left: 5px;background-color: rgb(64,128,96);color: white;">
+	        		<input type="search" style="float: right">
         		</div>
+	        		
         		<div class="top-space">
-	        		<table class="table">
+	        		<!-- <table class="table">
 	        			<tr>
 	        				<td width=10% class="time">15:00</td>
-	        				<td width=80% style="line-height: 20px;" class="content">
+	        				<td width=80% style="line-height: 20px;" class="content text-left">
 	        					서울 영등포 더에프 필드 A구장<br>
 	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
 	        				</td>
@@ -81,7 +136,7 @@
 	        			</tr>
 	        			<tr>
 	        				<td width=10% class="time">15:00</td>
-	        				<td width=80% style="line-height: 20px;" class="content">
+	        				<td width=80% style="line-height: 20px;" class="content text-left">
 	        					서울 영등포 더에프 필드 A구장<br>
 	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
 	        				</td>
@@ -90,7 +145,168 @@
 	        				</td>
 	        			</tr>
 	        			
-	        		</table>
+	        		</table> -->
+	        			
+	        				<div class="card border-left-success shadow h-100 reserve">
+                                <div class="card-body">
+                                    <div class="col-md-1 time">
+                                    15:00
+                                    </div>
+					        		<div class="col-md-10 content text-left">
+					        		서울 영등포 더에프 필드 A구장<br>
+	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
+					        		</div>	
+					        		<div class="col-md-1 button-align state">
+					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
+					        		</div>	
+                                </div>
+                           	</div>
+	        				<div style="height:3px;"></div>
+	        			
+	        				<div class="card border-left-success shadow h-100 reserve">
+                                <div class="card-body">
+                                    <div class="col-md-1 time">
+                                    15:00
+                                    </div>
+					        		<div class="col-md-10 content text-left">
+					        		서울 영등포 더에프 필드 A구장<br>
+	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
+					        		</div>	
+					        		<div class="col-md-1 button-align state">
+					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
+					        		</div>	
+                                </div>
+                           	</div>
+	        				<div style="height:3px;"></div>
+	        			
+	        				<div class="card border-left-success shadow h-100 reserve">
+                                <div class="card-body">
+                                    <div class="col-md-1 time">
+                                    15:00
+                                    </div>
+					        		<div class="col-md-10 content text-left">
+					        		서울 영등포 더에프 필드 A구장<br>
+	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
+					        		</div>	
+					        		<div class="col-md-1 button-align state">
+					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
+					        		</div>	
+                                </div>
+                           	</div>
+	        				<div style="height:3px;"></div>
+	        			
+	        				<div class="card border-left-success shadow h-100 reserve">
+                                <div class="card-body">
+                                    <div class="col-md-1 time">
+                                    15:00
+                                    </div>
+					        		<div class="col-md-10 content text-left">
+					        		서울 영등포 더에프 필드 A구장<br>
+	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
+					        		</div>	
+					        		<div class="col-md-1 button-align state">
+					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
+					        		</div>	
+                                </div>
+                           	</div>
+	        				<div style="height:3px;"></div>
+	        			
+	        				<div class="card border-left-success shadow h-100 reserve">
+                                <div class="card-body">
+                                    <div class="col-md-1 time">
+                                    15:00
+                                    </div>
+					        		<div class="col-md-10 content text-left">
+					        		서울 영등포 더에프 필드 A구장<br>
+	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
+					        		</div>	
+					        		<div class="col-md-1 button-align state">
+					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
+					        		</div>	
+                                </div>
+                           	</div>
+	        				<div style="height:3px;"></div>
+	        			
+	        				<div class="card border-left-success shadow h-100 reserve">
+                                <div class="card-body">
+                                    <div class="col-md-1 time">
+                                    15:00
+                                    </div>
+					        		<div class="col-md-10 content text-left">
+					        		서울 영등포 더에프 필드 A구장<br>
+	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
+					        		</div>	
+					        		<div class="col-md-1 button-align state">
+					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
+					        		</div>	
+                                </div>
+                           	</div>
+	        				<div style="height:3px;"></div>
+	        			
+	        				<div class="card border-left-success shadow h-100 reserve">
+                                <div class="card-body">
+                                    <div class="col-md-1 time">
+                                    15:00
+                                    </div>
+					        		<div class="col-md-10 content text-left">
+					        		서울 영등포 더에프 필드 A구장<br>
+	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
+					        		</div>	
+					        		<div class="col-md-1 button-align state">
+					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
+					        		</div>	
+                                </div>
+                           	</div>
+	        				<div style="height:3px;"></div>
+	        			
+	        				<div class="card border-left-success shadow h-100 reserve">
+                                <div class="card-body">
+                                    <div class="col-md-1 time">
+                                    15:00
+                                    </div>
+					        		<div class="col-md-10 content text-left">
+					        		서울 영등포 더에프 필드 A구장<br>
+	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
+					        		</div>	
+					        		<div class="col-md-1 button-align state">
+					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
+					        		</div>	
+                                </div>
+                           	</div>
+	        				<div style="height:3px;"></div>
+	        			
+	        				<div class="card border-left-success shadow h-100 reserve">
+                                <div class="card-body">
+                                    <div class="col-md-1 time">
+                                    15:00
+                                    </div>
+					        		<div class="col-md-10 content text-left">
+					        		서울 영등포 더에프 필드 A구장<br>
+	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
+					        		</div>	
+					        		<div class="col-md-1 button-align state">
+					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
+					        		</div>	
+                                </div>
+                           	</div>
+	        				<div style="height:3px;"></div>
+	        			
+	        				<div class="card border-left-success shadow h-100 reserve">
+                                <div class="card-body">
+                                    <div class="col-md-1 time">
+                                    15:00
+                                    </div>
+					        		<div class="col-md-10 content text-left">
+					        		서울 영등포 더에프 필드 A구장<br>
+	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
+					        		</div>	
+					        		<div class="col-md-1 button-align state">
+					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
+					        		</div>	
+                                </div>
+                           	</div>
+	        				<div style="height:3px;"></div>
+	        			
         		</div>
       		</div>
 	      
@@ -104,7 +320,7 @@
                 <div class="container">
                     <div class="main_product roomy-80">
                         <div class="head_title text-center fix">
-                            <h2 class="text-uppercase">What Client Say</h2>
+                            <h2 class="text-uppercase">이번 주 인기상품</h2>
                             <h5>Clean and Modern design is our best specialist</h5>
                         </div>
 
@@ -124,10 +340,8 @@
                                             <div class="col-sm-3">
                                                 <div class="port_item xs-m-top-30">
                                                     <div class="port_img">
-                                                        <img src="assets/images/work-img1.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img1.jpg" class="popup-img">+</a>
-                                                        </div>
+                                                        <img src="https://plab-football.s3.amazonaws.com/media/%E1%84%83%E1%85%A2%E1%84%80%E1%85%AE_%E1%84%8B%E1%85%A6%E1%84%91%E1%85%B3%E1%84%8B%E1%85%A6%E1%84%8B%E1%85%B5_%E1%84%91%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3_%E1%84%8B%E1%85%B2%E1%86%AF%E1%84%92%E1%85%A1%E1%84%8C%E1%85%A5%E1%86%B7_1.jpg" alt="" width="290" height="225"/>
+                                                        
                                                     </div>
                                                     <div class="port_caption m-top-20">
                                                         <h5>Your Work Title</h5>

@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet" href="assets/css/iconfont.css">
 <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-<link rel="stylesheet" href="assets/css/bootstrap.css">
+<link rel="stylesheet" href="assets/css/bootstrap.css">	
 <link rel="stylesheet" href="assets/css/magnific-popup.css">
 <link rel="stylesheet" href="assets/css/bootsnav.css">
 
@@ -34,7 +34,7 @@
 <body data-spy="scroll" data-target=".navbar-collapse">
 
 <jsp:include page="header.jsp"></jsp:include>
-<jsp:include page="main.jsp"></jsp:include>
+<jsp:include page="main.jsp"></jsp:include> 
 <jsp:include page="footer.jsp"></jsp:include>
 
 <!-- JS includes -->

@@ -31,8 +31,8 @@
 			<i class="fa fa-bars"></i>
 		</button>
 		
-		<a class="navbar-brand" href="#brand">
-			<!-- <img src="assets/images/logo.png" class="logo" alt=""> --><h4>Football-Play</h4>
+		<a class="navbar-brand" href="#">
+			<!-- <img src="assets/images/logo.png" class="logo" alt=""> --><h4><b>Football-Play</b></h4>
 		</a>
 	</div>
 	<!-- End Header Navigation -->
@@ -41,11 +41,11 @@
 	<!-- navbar menu -->
 	<div class="collapse navbar-collapse" id="navbar-menu">
 		<ul class="nav navbar-nav navbar-right">
-		<li><a href="#home">구장예약</a></li>                    
-			<li><a href="#features">게시판</a></li>
-			<li><a href="#business">마이페이지</a></li>
-			<li><a href="#test">로그인</a></li>
-			<li><a href="#contact">Contact</a></li>
+		<li><a href="#">구장예약</a></li>                    
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">마이페이지</a></li>
+			<li><a href="#">로그인</a></li>
+			<li><a href="#">Contact</a></li>
 		</ul>
 	</div><!-- /.navbar-collapse -->
 	</div>
