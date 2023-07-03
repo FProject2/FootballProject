@@ -82,21 +82,21 @@
                                 <div class="widget_item widget_latest sm-m-top-50">
                                     <h5 class="text-white">Latest News</h5>
                                     <div class="widget_latst_item m-top-30">
-                                        <div class="item_icon"><img src="assets/images/ltst-img-1.jpg" alt="" /></div>
+                                        <div class="item_icon"><img src="../main/assets/images/ltst-img-1.jpg" alt="" /></div>
                                         <div class="widget_latst_item_text">
                                             <p>Lorem ipsum dolor sit amet, consectetur</p>
                                             <a href="">21<sup>th</sup> July 2016</a>
                                         </div>
                                     </div>
                                     <div class="widget_latst_item m-top-30">
-                                        <div class="item_icon"><img src="assets/images/ltst-img-2.jpg" alt="" /></div>
+                                        <div class="item_icon"><img src="../main/assets/images/ltst-img-2.jpg" alt="" /></div>
                                         <div class="widget_latst_item_text">
                                             <p>Lorem ipsum dolor sit amet, consectetur</p>
                                             <a href="">21<sup>th</sup> July 2016</a>
                                         </div>
                                     </div>
                                     <div class="widget_latst_item m-top-30">
-                                        <div class="item_icon"><img src="assets/images/ltst-img-3.jpg" alt="" /></div>
+                                        <div class="item_icon"><img src="../main/assets/images/ltst-img-3.jpg" alt="" /></div>
                                         <div class="widget_latst_item_text">
                                             <p>Lorem ipsum dolor sit amet, consectetur</p>
                                             <a href="">21<sup>th</sup> July 2016</a>

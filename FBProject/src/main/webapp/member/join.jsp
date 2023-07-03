@@ -42,28 +42,29 @@
 		padding: 50px;
 	}
 </style>
-<script type="text/javascript" src="../shadow/js/shadowbox.js"></script>
 <script src="../main/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<script type="text/javascript" src="../shadow/js/shadowbox.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
 Shadowbox.init({
 	players:['iframe']
 })
-
 $(function(){
 	$('#idCheckBtn').click(function(){
-		Shadowbox.open({
+		/* Shadowbox.open({
 			content:'../member/idcheck.do',
 			player:'iframe',
 			width:370,
 			height:180,
 			title:'아이디 중복체크'
-		})
+		}) */
+		window.open("../member/idcheck.do","","width=500, height=300")
 	})
 	
 	$('#postBtn').click(function(){
 		Shadowbox.open({
 			content:'../member/postfind.do',
+			
 				player:'iframe',
 				width:520,
 				height:350,
