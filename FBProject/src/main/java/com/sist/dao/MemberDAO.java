@@ -27,7 +27,7 @@ public class MemberDAO {
 		try {
 			conn=db.getConnection();
 			String sql="SELECT COUNT(*) "
-					 + "FROM project_member "
+					 + "FROM member "
 					 + "WHERE id=?";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, id);
@@ -51,7 +51,7 @@ public class MemberDAO {
 		try {
 			conn=db.getConnection();
 			String sql="SELECT COUNT(*) "
-					 + "FROM project_member "
+					 + "FROM member "
 					 + "WHERE email=?";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, email);
@@ -130,7 +130,7 @@ public class MemberDAO {
 		try {
 			conn=db.getConnection();
 			String sql="SELECT COUNT(*) "
-					 + "FROM project_member "
+					 + "FROM member "
 					 + "WHERE phone=?";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, phone);
@@ -151,8 +151,8 @@ public class MemberDAO {
 	public void memberInsert(MemberVO vo) {
 		try {
 			conn=db.getConnection();
-			String sql="INSERT INTO project_member VALUES("
-					+ "?,?,?,?,?,?,?,?,?,?,?,'n',SYSDATE)";
+			String sql="INSERT INTO member VALUES("
+					+ "?,?,?,?,?,?,?,?,?,?,?,'n',SYSDATE,?)";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, vo.getId());
 			ps.setString(2, vo.getPwd());
@@ -165,6 +165,7 @@ public class MemberDAO {
 			ps.setString(9, vo.getAddr2());
 			ps.setString(10, vo.getPhone());
 			ps.setString(11, vo.getContent());
+			ps.setString(12, vo.getNickname());
 			ps.executeUpdate();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -185,7 +186,7 @@ public class MemberDAO {
 		try {
 			conn=db.getConnection();
 			String sql="SELECT COUNT(*) "
-					 + "FROM project_member "
+					 + "FROM member "
 					 + "WHERE id=?";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, id);
@@ -198,7 +199,7 @@ public class MemberDAO {
 				vo.setMsg("NOID");
 			} else {
 				sql="SELECT pwd,name,admin,sex "
-				  + "FROM project_member "
+				  + "FROM member "
 				  + "WHERE id=?";
 				ps=conn.prepareStatement(sql);
 				ps.setString(1, id);

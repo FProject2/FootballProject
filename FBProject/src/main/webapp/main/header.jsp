@@ -41,11 +41,13 @@
 	<!-- navbar menu -->
 	<div class="collapse navbar-collapse" id="navbar-menu">
 		<ul class="nav navbar-nav navbar-right">
-		<li><a href="#">구장예약</a></li>                    
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">마이페이지</a></li>
-			<li><a href="#">로그인</a></li>
-			<li><a href="#">Contact</a></li>
+			<a href="#contact"><img src="../main/assets/images/shop_icon.png" style="padding-top: 13px"></a>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#home">구장예약</a></li>                    
+			<li><a href="#features">게시판</a></li>
+			<li><a href="#business">마이페이지</a></li>
+			<li><a href="../member/login.jsp">로그인</a></li>
 		</ul>
 	</div><!-- /.navbar-collapse -->
 	</div>

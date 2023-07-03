@@ -27,13 +27,11 @@
 
 <!--Theme Responsive css-->
 <link rel="stylesheet" href="../main/assets/css/responsive.css" />
-
-<script src="../main/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <style type="text/css">
 	.row {
 		margin: 0px auto;
-		height: 120vh;
-		padding-top: 100px;
+		height: 140vh;
+		padding-top: 120px;
 		
 	}
 	#login {
@@ -44,6 +42,40 @@
 		padding: 50px;
 	}
 </style>
+<script type="text/javascript" src="../shadow/js/shadowbox.js"></script>
+<script src="../main/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+Shadowbox.init({
+	players:['iframe']
+})
+
+$(function(){
+	$('#idCheckBtn').click(function(){
+		Shadowbox.open({
+			content:'../member/idcheck.do',
+			player:'iframe',
+			width:370,
+			height:180,
+			title:'아이디 중복체크'
+		})
+	})
+	
+	$('#postBtn').click(function(){
+		Shadowbox.open({
+			content:'../member/postfind.do',
+				player:'iframe',
+				width:520,
+				height:350,
+				title:'우편번호 검색'
+		})
+	})
+	
+	$('#joinBtn').click(function(){
+		$('#joinFrm').submit();
+	})
+})
+</script>
 </head>
 <body>
 <jsp:include page="../main/header.jsp"></jsp:include>
@@ -53,12 +85,22 @@
 		<div class="row">
 		
 		<div class="form-group" id="login">
-		<form>	
+		<form method=post action="../member/join_ok.do" name="joinFrm" id="joinFrm">	
+			
+				<div class="form-group">
+					<label class="form-label mt-4 text-left">이름</label>
+					<input type="text" class="form-control" name=name>
+				</div>
 			
 				<div class="form-group">
 					<label class="form-label mt-4 text-left">아이디</label>
 					<input type="text" class="form-control" name=id>
 					<input type=button value="아이디 중복체크" class="btn btn-sm btn-danger" id="idCheckBtn">
+				</div>
+				
+				<div class="form-group">
+					<label class="form-label mt-4 text-left">닉네임</label>
+					<input type="text" class="form-control" name=nickname>
 				</div>
 				
 				<div class="form-group">
@@ -102,14 +144,14 @@
 				<div class="form-group">
 					<label class="form-label mt-4 text-left">전화번호</label>
 					<select name=phone1>
-	  								<option>010</option>
+	  					<option>010</option>
 	  				</select>
 	  				<input type=text name=phone id=phone size=12 class="input-sm">
 	  				<input type=button value="전화체크" class="btn btn-sm btn-warning" id=phoneBtn>
 				</div>
 				
 				<div class="d-grip gap-2 text-center">
-					<button class="btn btn-danger btn-lg">회원가입</button>
+					<button class="btn btn-danger btn-lg" id="joinBtn">회원가입</button>
 					<button class="btn btn-danger btn-lg">취소</button>
 				</div>
 		</form>

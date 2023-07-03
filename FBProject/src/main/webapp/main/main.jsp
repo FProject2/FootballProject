@@ -72,7 +72,7 @@
                                 <div class="hello_slid">
                                     <div class="slid_item">
                                         <div class="home_text ">
-                                            <img src="assets/images/1.jpg" style="width:1920px;height:600px" class="homeslide">
+                                            <img src="../main/assets/images/1.jpg" style="width:1920px;height:600px" class="homeslide">
                                    
                                         </div>
 
@@ -80,7 +80,7 @@
                                     </div><!-- End off slid item -->
                                     <div class="slid_item">
                                         <div class="home_text ">
-                                            <img src="assets/images/2.jpg" style="width:1920px;height:600px" class="homeslide">
+                                            <img src="../main/assets/images/2.jpg" style="width:1920px;height:600px" class="homeslide">
                                    
                                         </div>
 
@@ -88,7 +88,7 @@
                                     </div><!-- End off slid item -->
                                     <div class="slid_item">
                                         <div class="home_text ">
-                                            <img src="assets/images/3.jpg" style="width:1920px;height:600px" class="homeslide">
+                                            <img src="../main/assets/images/3.jpg" style="width:1920px;height:600px" class="homeslide">
                                    
                                         </div>
 

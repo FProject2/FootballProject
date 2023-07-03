@@ -60,6 +60,7 @@ public class MemberModel {
 		String id=request.getParameter("id");
 		String pwd=request.getParameter("pwd");
 		String name=request.getParameter("name");
+		String nickname = request.getParameter("nickname");
 		String sex=request.getParameter("sex");
 		String birthday=request.getParameter("birthday");
 		String email=request.getParameter("email");
@@ -87,7 +88,7 @@ public class MemberModel {
 		dao.memberInsert(vo);
 		
 		//이동
-		return "redirect:../main/main.do";
+		return "redirect:../main/home.do";
 	}
 	@RequestMapping("member/login.do")
 	public void memberLogin(HttpServletRequest request, HttpServletResponse response) {
@@ -117,6 +118,6 @@ public class MemberModel {
 		HttpSession session=request.getSession();
 		session.invalidate();
 		
-		return "redirect:../main/main.do";
+		return "redirect:../main/home.do";
 	}
 }
