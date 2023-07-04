@@ -41,6 +41,11 @@
 		border-radius: 30px;
 		padding: 50px;
 	}
+	
+	#idCheckBtn, #postBtn {
+		margin-top: 5px;
+	}
+	
 </style>
 <script src="../main/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
@@ -74,46 +79,49 @@ $(function(){
 			
 				<div class="form-group">
 					<label class="form-label mt-4 text-left">이름</label>
-					<input type="text" class="form-control" name=name>
+					<input type="text" class="form-control" name=name id=name>
 				</div>
 			
 				<div class="form-group">
 					<label class="form-label mt-4 text-left">아이디</label>
 					<input type="text" class="form-control" name=id id=id readonly>
-					<input type=button value="아이디 중복체크" class="btn btn-sm btn-danger" id="idCheckBtn">
+					<div class="text-right">
+					<input type=button value="아이디 중복체크" class="btn btn-sm btn-danger text-right" id="idCheckBtn">
+					</div>
 				</div>
 				
 				<div class="form-group">
 					<label class="form-label mt-4 text-left">닉네임</label>
-					<input type="text" class="form-control" name=nickname>
+					<input type="text" class="form-control" name=nickname id=nickname>
 				</div>
 				
 				<div class="form-group">
 					<label class="form-label mt-4 text-left">비밀번호</label>
-					<input type="password" class="form-control" name=pwd>
+					<input type="password" class="form-control" name=pwd id=pwd>
 				</div>
 				
 				<div class="form-group">
 					<label class="form-label mt-4 text-left">성별</label>
-					<input type=radio name=sex value=남자 checked>남자
-	  				<input type=radio name=sex value=여자>여자
+					<input type=radio name=sex value="남" checked>남자
+	  				<input type=radio name=sex value="여">여자
 				</div>
 				
 				<div class="form-group">
 					<label class="form-label mt-4 text-left">생년월일</label>
-					<input type="date" name=birthday class="form-control">
+					<input type="date" name=birthday id=birthday class="form-control">
 				</div>
 				
 				<div class="form-group">
 					<label class="form-label mt-4 text-left">이메일</label>
-					<input type=text name=email id=email size=55 class="input-sm form-control">
-	  				<input type=button value="이메일 중복 체크"  class="btn btn-sm btn-danger" id=emailBtn>
+					<input type=text name=email id=email size=55 class="input-sm form-control" placeholder="name@example.com">
 				</div>
 				
 				<div class="form-group">
 					<label class="form-label mt-4 text-left">우편번호</label>
 					<input type=text name=post id=post size=10 class="input-sm form-control">
-	  				<input type=button value="우편번호검색" class="btn btn-sm btn-info" id=postBtn>
+					<div class="text-right">
+	  				<input type=button value="우편번호검색" class="btn btn-sm btn-danger" id=postBtn>
+	  				</div>
 				</div>
 				
 				<div class="form-group">
@@ -132,7 +140,6 @@ $(function(){
 	  					<option>010</option>
 	  				</select>
 	  				<input type=text name=phone id=phone size=12 class="input-sm">
-	  				<input type=button value="전화체크" class="btn btn-sm btn-warning" id=phoneBtn>
 				</div>
 				
 				<div class="d-grip gap-2 text-center">

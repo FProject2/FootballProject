@@ -92,6 +92,7 @@ public class MemberDAO {
 		
 		return count;
 	}
+	
 	//3-1. 우편번호 검색
 	public List<ZipcodeVO> postFindData(String dong) {
 		List<ZipcodeVO> list=new ArrayList<ZipcodeVO>();
@@ -152,21 +153,22 @@ public class MemberDAO {
 		try {
 			conn=db.getConnection();
 			String sql="INSERT INTO member VALUES("
-					+ "?,?,?,?,?,?,?,?,?,?,?,'n',SYSDATE,?)";
+					+ "?,?,?,?,?,?,?,?,?,?,?,SYSDATE,'n')";
+			
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, vo.getId());
 			ps.setString(2, vo.getPwd());
-			ps.setString(3, vo.getName());
-			ps.setString(4, vo.getSex());
-			ps.setString(5, vo.getBirthday());
-			ps.setString(6, vo.getEmail());
-			ps.setString(7, vo.getPost());
-			ps.setString(8, vo.getAddr1());
-			ps.setString(9, vo.getAddr2());
-			ps.setString(10, vo.getPhone());
-			ps.setString(11, vo.getContent());
-			ps.setString(12, vo.getNickname());
+			ps.setString(3, vo.getEmail());
+			ps.setString(4, vo.getName());
+			ps.setString(5, vo.getNickname());
+			ps.setString(6, vo.getSex());
+			ps.setString(7, vo.getBirthday());
+			ps.setString(8, vo.getPhone());
+			ps.setString(9, vo.getPost());
+			ps.setString(10, vo.getAddr1());
+			ps.setString(11, vo.getAddr2());
 			ps.executeUpdate();
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -174,11 +176,13 @@ public class MemberDAO {
 			db.disConnection(conn, ps);
 		}
 	}
+	
 	// 회원 수정
 	// 회원 탈퇴
 	// 아이디 찾기
 	// 비밀번호 찾기
 	// 비밀번호 변경
+	
 	// 로그인
 	public MemberVO memberLogin(String id, String pwd) {
 		MemberVO vo = new MemberVO();

@@ -12,6 +12,8 @@ import com.sist.dao.MemberDAO;
 import com.sist.vo.MemberVO;
 import com.sist.vo.ZipcodeVO;
 
+import oracle.security.o3logon.a;
+
 public class MemberModel {
 	@RequestMapping("member/login.do")
 	public String login(HttpServletRequest request, HttpServletResponse response) {
@@ -65,7 +67,6 @@ public class MemberModel {
 		String id=request.getParameter("id");
 		String pwd=request.getParameter("pwd");
 		String name=request.getParameter("name");
-		String nickname = request.getParameter("nickname");
 		String sex=request.getParameter("sex");
 		String birthday=request.getParameter("birthday");
 		String email=request.getParameter("email");
@@ -74,7 +75,7 @@ public class MemberModel {
 		String addr2=request.getParameter("addr2");
 		String phone1=request.getParameter("phone1");
 		String phone=request.getParameter("phone");
-		String content=request.getParameter("content");
+		String nickname = request.getParameter("nickname");
 		
 		MemberVO vo = new MemberVO();
 		vo.setId(id);
@@ -87,13 +88,13 @@ public class MemberModel {
 		vo.setAddr1(addr1);
 		vo.setAddr2(addr2);
 		vo.setPhone(phone1+"-"+phone);
-		vo.setContent(content);
+		vo.setNickname(nickname);
 		
 		MemberDAO dao=MemberDAO.newInstance();
 		dao.memberInsert(vo);
 		
 		//이동
-		return "redirect:../main/home.do";
+		return "redirect:../main/main.do";
 	}
 	@RequestMapping("member/login.do")
 	public void memberLogin(HttpServletRequest request, HttpServletResponse response) {
@@ -123,6 +124,6 @@ public class MemberModel {
 		HttpSession session=request.getSession();
 		session.invalidate();
 		
-		return "redirect:../main/home.do";
+		return "redirect:../main/main.do";
 	}
 }

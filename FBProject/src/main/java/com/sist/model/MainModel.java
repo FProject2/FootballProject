@@ -20,4 +20,5 @@ public class MainModel {
 		request.setAttribute("main_jsp", "../main/main.jsp");
 		return "../main/home.jsp";
 	}
+
 }
