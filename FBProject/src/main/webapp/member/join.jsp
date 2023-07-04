@@ -95,7 +95,7 @@ $(function(){
 			
 				<div class="form-group">
 					<label class="form-label mt-4 text-left">아이디</label>
-					<input type="text" class="form-control" name=id>
+					<input type="text" class="form-control" name=id id=id readonly>
 					<input type=button value="아이디 중복체크" class="btn btn-sm btn-danger" id="idCheckBtn">
 				</div>
 				

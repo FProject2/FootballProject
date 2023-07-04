@@ -31,7 +31,7 @@
 			<i class="fa fa-bars"></i>
 		</button>
 		
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand" href="../main/main.do">
 			<!-- <img src="assets/images/logo.png" class="logo" alt=""> --><h4><b>Football-Play</b></h4>
 		</a>
 	</div>
@@ -44,10 +44,10 @@
 			<a href="#contact"><img src="../main/assets/images/shop_icon.png" style="padding-top: 13px"></a>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="#home">구장예약</a></li>                    
+			<li><a href="../main/main.do">구장예약</a></li>                    
 			<li><a href="#features">게시판</a></li>
 			<li><a href="#business">마이페이지</a></li>
-			<li><a href="../member/login.jsp">로그인</a></li>
+			<li><a href="../member/login.do">로그인</a></li>
 		</ul>
 	</div><!-- /.navbar-collapse -->
 	</div>

@@ -59,9 +59,9 @@ jQuery(document).ready(function ($) {
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: true,
+        /*arrows: false,
         prevArrow: "<i class='icon icon-chevron-left nextprevleft'></i>",
-        nextArrow: "<i class='icon icon-chevron-right nextprevright'></i>",
+        nextArrow: "<i class='icon icon-chevron-right nextprevright'></i>",*/
         autoplay: true,
         autoplaySpeed: 2000
     });

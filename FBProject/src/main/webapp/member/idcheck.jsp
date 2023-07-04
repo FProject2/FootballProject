@@ -40,7 +40,7 @@
 							'<span style="color:blue">'
 							+id+'는(은) 사용 가능한 아이디입니다!</span>'
 						)
-						$('#id').prop('disabled', true);
+						//$('#id').prop('disabled', true);
 					} else {
 						$('#okBtn').hide();
 						$('#res').html(
@@ -54,8 +54,9 @@
 			})
 		})
 		$('#okBtn').click(function(){
-			parent.joinFrm.id.value=$('#id').val()
-			parent.Shadowbox.close();
+			opener.joinFrm.id.value=$('#id').val()
+			window.close()
+			/* parent.Shadowbox.close(); */
 		})
 	})
 </script>
@@ -68,7 +69,7 @@
 				<tr>
 					<td>
 						ID:<input type=text name=id id=id size=15 class=input-sm>
-						<input type=button value=중복체크 class="btn btn-sm gtn-warning" id=checkBtn>
+						<input type=button value=중복체크 class="btn btn-sm btn-warning" id=checkBtn>
 					</td>
 				</tr>
 				<tr>

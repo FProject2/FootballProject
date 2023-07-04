@@ -1068,13 +1068,13 @@ Home Section style
     position: absolute;
     z-index: 90;
     cursor: pointer;  
-} */
+}
 .main_home .nextprevleft{
     left:-3%;
 }
 .main_home .nextprevright{
     right:-3%;
-}
+} */
 .home_btns{
     margin-left:-10px;
 }

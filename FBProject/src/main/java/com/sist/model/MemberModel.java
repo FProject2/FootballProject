@@ -13,6 +13,10 @@ import com.sist.vo.MemberVO;
 import com.sist.vo.ZipcodeVO;
 
 public class MemberModel {
+	@RequestMapping("member/login.do")
+	public String login(HttpServletRequest request, HttpServletResponse response) {
+		return "../member/login.jsp";
+	}
 	@RequestMapping("member/join.do")
 	public String memberJoin(HttpServletRequest request, HttpServletResponse response) {
 		request.setAttribute("main_jsp", "../member/join.jsp");

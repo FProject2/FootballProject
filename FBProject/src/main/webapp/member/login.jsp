@@ -54,9 +54,9 @@
 </head>
 <body>
 
-<div id="top">
+<%-- <div id="top">
 <jsp:include page="../main/header.jsp"></jsp:include>
-</div>
+</div> --%>
 
 <section>
 	<div class="container">
@@ -90,6 +90,6 @@
 	</div>
 </section>
 
-<jsp:include page="../main/footer.jsp"></jsp:include>
+<%-- <jsp:include page="../main/footer.jsp"></jsp:include> --%>
 </body>
 </html>
