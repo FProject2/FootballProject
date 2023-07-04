@@ -44,8 +44,9 @@
 			<a href="#contact"><img src="../main/assets/images/shop_icon.png" style="padding-top: 13px"></a>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="../main/main.do">구장예약</a></li>                    
-			<li><a href="#features">게시판</a></li>
+			<li><a href="../main/main.do">구장예약</a></li>              
+			<li><a href="#features">공지사항</a></li>
+			<li><a href="#features">문의하기</a></li>
 			<li><a href="#business">마이페이지</a></li>
 			<li><a href="../member/login.do">로그인</a></li>
 		</ul>
