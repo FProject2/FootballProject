@@ -27,7 +27,7 @@ public class MemberDAO {
 		try {
 			conn=db.getConnection();
 			String sql="SELECT COUNT(*) "
-					 + "FROM project_member "
+					 + "FROM member "
 					 + "WHERE id=?";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, id);

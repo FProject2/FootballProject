@@ -15,12 +15,13 @@ import com.sist.vo.ZipcodeVO;
 public class MemberModel {
 	@RequestMapping("member/login.do")
 	public String login(HttpServletRequest request, HttpServletResponse response) {
-		return "../member/login.jsp";
+		request.setAttribute("main_jsp", "../member/login.jsp");
+		return "../main/home.jsp";
 	}
 	@RequestMapping("member/join.do")
 	public String memberJoin(HttpServletRequest request, HttpServletResponse response) {
 		request.setAttribute("main_jsp", "../member/join.jsp");
-		return "../main/main.jsp";
+		return "../main/home.jsp";
 	}
 	@RequestMapping("member/idcheck.do")
 	public String memberIdCheck(HttpServletRequest request, HttpServletResponse response) {

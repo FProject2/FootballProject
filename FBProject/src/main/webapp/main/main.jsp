@@ -14,43 +14,43 @@
 	.hello_slid img{
 			border-radius: 30px;
 		}
-			.reserve td {
+			#reserve .reserve td {
 				padding-top : 15px;
 			    padding-bottom: 20px;
 			}
   
-       		.reserve .time, .reserve .content, .reserve .state{
+       		#reserve .reserve .time, #reserve .reserve .content, #reserve .reserve .state{
        			font-size: 20px;
        			vertical-align:middle;
        			color: black;
        			font-family: 'Noto Sans KR', sans-serif;
        		}
        		
-       		.content{
+       		#reserve .content{
        			line-height: 17px;
        		}
 
-       		.button-align{
+       		#reserve .button-align{
        			text-align: center;
        			font-size: 15px;
        			vertical-align:middle;
        		}
-       		.top-space{
+       		#reserve .top-space{
        			max-height: 400px;
        			overflow: auto;
        			margin-top: 10px;
        		}
-       		.top-space::-webkit-scrollbar {
+       		#reserve .top-space::-webkit-scrollbar {
 			    width: 10px;
 			}
-			.top-space::-webkit-scrollbar-thumb {
+			#reserve .top-space::-webkit-scrollbar-thumb {
 			    background-color: rgb(180, 180, 180);
 			    border-radius: 10px;
 			}
-			.top-space::-webkit-scrollbar-track {
+			#reserve .top-space::-webkit-scrollbar-track {
 			    background-color: #F5F5F5;
 			}
-			.state .btn-design{
+			#reserve .state .btn-design{
 				border-radius:5px;
 				font-size: 13px;
 				background-color:rgb(64,128,96);
@@ -106,9 +106,9 @@
 
             <!--Business Section-->
             <section id="business" class="business bg-grey roomy-70">
-                <!-- reserve-start -->
+            <!-- reserve-start -->
 	
-        	<div class="container"  style="text-align: center;">
+        	<div class="container"  style="text-align: center;" id="reserve">
 	            
                 <div class="head_title text-center fix" name="reserveTitle">
                     <h2 class="text-uppercase">구장 예약</h2>
@@ -310,7 +310,6 @@
         		</div>
       		</div>
 	      
-       
         <!-- reserve-end -->
             </section><!-- End off Business section -->
 

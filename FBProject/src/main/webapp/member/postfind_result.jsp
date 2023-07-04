@@ -8,9 +8,9 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	function ok(zip,addr){
-		parent.joinFrm.post.value=zip
-		parent.joinFrm.addr1.value=addr
-		parent.Shadowbox.close()
+		opener.joinFrm.post.value=zip
+		opener.joinFrm.addr1.value=addr
+		window.close()
 	}
 </script>
 </head>

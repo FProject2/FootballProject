@@ -31,7 +31,7 @@
 <script src="../main/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
 <style type="text/css">
-	.row {
+	#logincont .row {
 		margin: 0px auto;
 		height: 80vh;
 		padding-top: 200px;
@@ -54,12 +54,7 @@
 </head>
 <body>
 
-<%-- <div id="top">
-<jsp:include page="../main/header.jsp"></jsp:include>
-</div> --%>
-
-<section>
-	<div class="container">
+	<div class="container" id=logincont>
 		<div class="row">
 		
 		<div class="form-group" id="login">
@@ -80,7 +75,7 @@
 				</div>
 				
 				<div class="form-group text-center" style="margin-top: 10px;">
-					<label class="form-label">아직 회원이 아니시라면? <a href="join.jsp" id="join">회원가입</a></label>
+					<label class="form-label">아직 회원이 아니시라면? <a href="../member/join.do" id="join">회원가입</a></label>
 				</div>
 			
 		</form>
@@ -88,8 +83,6 @@
 
 		</div>
 	</div>
-</section>
-
-<%-- <jsp:include page="../main/footer.jsp"></jsp:include> --%>
+	
 </body>
 </html>

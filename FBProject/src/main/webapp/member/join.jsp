@@ -28,7 +28,7 @@
 <!--Theme Responsive css-->
 <link rel="stylesheet" href="../main/assets/css/responsive.css" />
 <style type="text/css">
-	.row {
+	#joincont .row {
 		margin: 0px auto;
 		height: 140vh;
 		padding-top: 120px;
@@ -43,33 +43,19 @@
 	}
 </style>
 <script src="../main/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-<script type="text/javascript" src="../shadow/js/shadowbox.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
-Shadowbox.init({
-	players:['iframe']
-})
 $(function(){
 	$('#idCheckBtn').click(function(){
-		/* Shadowbox.open({
-			content:'../member/idcheck.do',
-			player:'iframe',
-			width:370,
-			height:180,
-			title:'아이디 중복체크'
-		}) */
-		window.open("../member/idcheck.do","","width=500, height=300")
+		let x=(document.body.offsetWidth/2)-(500/2)
+		let y=(window.screen.height/2)-(300/2)
+		window.open("../member/idcheck.do","",'width=500, height=300, left='+x+', top='+y)
 	})
 	
 	$('#postBtn').click(function(){
-		Shadowbox.open({
-			content:'../member/postfind.do',
-			
-				player:'iframe',
-				width:520,
-				height:350,
-				title:'우편번호 검색'
-		})
+		let x=(document.body.offsetWidth/2)-(520/2)
+		let y=(window.screen.height/2)-(350/2)
+		window.open("../member/postfind.do","",'width=520, height=350, left='+x+', top='+y)
 	})
 	
 	$('#joinBtn').click(function(){
@@ -79,10 +65,8 @@ $(function(){
 </script>
 </head>
 <body>
-<jsp:include page="../main/header.jsp"></jsp:include>
 
-<section>
-	<div class="container py-4">
+	<div class="container py-4" id=joincont>
 		<div class="row">
 		
 		<div class="form-group" id="login">
@@ -153,15 +137,13 @@ $(function(){
 				
 				<div class="d-grip gap-2 text-center">
 					<button class="btn btn-danger btn-lg" id="joinBtn">회원가입</button>
-					<button class="btn btn-danger btn-lg">취소</button>
+					<input type=button class="btn btn-danger btn-lg" value="취소" onclick="javascript:history.back()">
 				</div>
 		</form>
 		</div>
 
 		</div>
 	</div>
-</section>
 
-<jsp:include page="../main/footer.jsp"></jsp:include>
 </body>
 </html>
