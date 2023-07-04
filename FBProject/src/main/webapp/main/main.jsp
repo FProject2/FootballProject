@@ -72,7 +72,7 @@
                                 <div class="hello_slid">
                                     <div class="slid_item">
                                         <div class="home_text ">
-                                            <img src="../main/assets/images/1.jpg" style="width:1920px;height:600px" class="homeslide">
+                                            <img src="../main/assets/images/3.jpg" style="width:1920px;height:600px" class="homeslide">
                                    
                                         </div>
 
@@ -80,7 +80,7 @@
                                     </div><!-- End off slid item -->
                                     <div class="slid_item">
                                         <div class="home_text ">
-                                            <img src="../main/assets/images/2.jpg" style="width:1920px;height:600px" class="homeslide">
+                                            <img src="../main/assets/images/5.jpg" style="width:1920px;height:600px" class="homeslide">
                                    
                                         </div>
 
@@ -88,12 +88,31 @@
                                     </div><!-- End off slid item -->
                                     <div class="slid_item">
                                         <div class="home_text ">
-                                            <img src="../main/assets/images/3.jpg" style="width:1920px;height:600px" class="homeslide">
+                                            <img src="../main/assets/images/6.jpg" style="width:1920px;height:600px" class="homeslide">
                                    
                                         </div>
 
                               
                                     </div><!-- End off slid item -->
+                                    
+                                                                        <div class="slid_item">
+                                        <div class="home_text ">
+                                            <img src="../main/assets/images/7.jpg" style="width:1920px;height:600px" class="homeslide">
+                                   
+                                        </div>
+
+                              
+                                    </div><!-- End off slid item -->
+                                    
+                                                                        <div class="slid_item">
+                                        <div class="home_text ">
+                                            <img src="../main/assets/images/8.jpg" style="width:1920px;height:600px" class="homeslide">
+                                   
+                                        </div>
+
+                              
+                                    </div><!-- End off slid item -->
+                                    
                                 </div>
                             </div>
 
@@ -320,7 +339,7 @@
                     <div class="main_product roomy-80">
                         <div class="head_title text-center fix">
                             <h2 class="text-uppercase">이번 주 인기상품</h2>
-                            <h5>Clean and Modern design is our best specialist</h5>
+                            <h5>인기 폭발! 이번 주 가장 인기 있는 상품 TOP 10</h5>
                         </div>
 
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -544,8 +563,8 @@
                 <div class="container">
                     <div class="main_product roomy-80">
                         <div class="head_title text-center fix">
-                            <h2 class="text-uppercase">What Client Say</h2>
-                            <h5>Clean and Modern design is our best specialist</h5>
+                            <h2 class="text-uppercase">지역별 맛집</h2>
+                            <h5>현지의 맛을 만나다: 지역별 맛집 추천</h5>
                         </div>
 
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
