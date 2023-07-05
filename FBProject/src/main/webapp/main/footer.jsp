@@ -94,7 +94,7 @@
                             <div class="col-md-3">
                                 <div class="widget_item widget_newsletter sm-m-top-50">
                                 	<h4><b style="color: white;">Football-Play</b></h4>
-                                    <img src="assets/images/shop_icon.png" width=220px height=100px>
+                                    <img src="../main/assets/images/shop_icon.png" width=220px height=100px>
 
                                 </div><!-- End off widget item -->
                             </div><!-- End off col-md-3 -->

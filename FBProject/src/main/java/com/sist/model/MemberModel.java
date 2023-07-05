@@ -96,12 +96,15 @@ public class MemberModel {
 		//이동
 		return "redirect:../main/main.do";
 	}
-	@RequestMapping("member/login.do")
+	
+	@RequestMapping("member/login_ok.do")
 	public void memberLogin(HttpServletRequest request, HttpServletResponse response) {
 		String id=request.getParameter("id");
 		String pwd=request.getParameter("pwd");
-		MemberDAO dao=MemberDAO.newInstance();
+		
+		MemberDAO dao = MemberDAO.newInstance();
 		MemberVO vo = dao.memberLogin(id, pwd);
+		
 		HttpSession session=request.getSession();
 		//로그인 => 사용자의 일부 정보를 저장
 		if(vo.getMsg().equals("OK")) {

@@ -29,6 +29,49 @@
 <link rel="stylesheet" href="../main/assets/css/responsive.css" />
 
 <script src="../main/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#logBtn').click(function() {
+			let id=$('#id').val();
+			if(id.trim()=="")
+			{
+				$('#id').focus;
+				return;
+			}
+			
+			let pwd = $('#pwd').val();
+			if(pwd.trim()==""){
+				$('#pwd').focus;
+				return;
+			}
+			
+			$.ajax({
+				type:'post',
+				url:'../member/login_ok.do',
+				data:{"id":id, "pwd":pwd},
+				success:function(result){
+					let res = result.trim();
+					if(res==='NOID'){
+						alert("존재하지 않는 아이디입니다.")
+						$('#id').val("");
+						$('#pwd').val("");
+						$('#id').focus();
+					}
+					else if(res==='NOPWD'){
+						alert("비밀번호가 틀렸습니다.")
+						$('#pwd').val("");
+						$('#pwd').focus();
+					}
+					else {
+						location.href="../main/main.do"
+					}
+				}
+			})
+			
+		})
+	})
+</script>
 
 <style type="text/css">
 	#logincont .row {
@@ -50,6 +93,10 @@
 	#join.hover {
 		text-decoration: underline;
 	}
+	#text {
+		font-size:10px;
+		color: #d9534f;
+	}
 </style>
 </head>
 <body>
@@ -58,27 +105,25 @@
 		<div class="row">
 		
 		<div class="form-group" id="login">
-		<form>	
 			
 				<div class="form-group">
 					<label class="form-label mt-4 text-left">아이디</label>
-					<input type="text" class="form-control" name=id>
+					<input type="text" class="form-control" name=id id=id>
 				</div>
 				
 				<div class="form-group">
 					<label class="form-label mt-4 text-left">비밀번호</label>
-					<input type="password" class="form-control" name=pwd>
+					<input type="password" class="form-control" name=pwd id=pwd>
 				</div>
-				
+
 				<div class="d-grip gap-2 text-center" style="margin-top: 10px;">
-					<button class="btn btn-danger btn-lg">로그인</button>
+					<button class="btn btn-danger btn-lg" id="logBtn">로그인</button>
 				</div>
 				
 				<div class="form-group text-center" style="margin-top: 10px;">
 					<label class="form-label">아직 회원이 아니시라면? <a href="../member/join.do" id="join">회원가입</a></label>
 				</div>
-			
-		</form>
+				
 		</div>
 
 		</div>
