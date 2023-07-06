@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,11 +17,12 @@
 	#navbar {
 		text-align: center;
 		margin-top: 25px;
+		margin-left: 50px;
 	}
 	
 	.nav-item {
-		margin-left: 30px;
-		margin-right: 30px;
+		margin-left: 20px;
+		margin-right: 20px;
 	}
 	
 	.nav-link {
@@ -51,34 +53,14 @@
 	<div class="row" id="menu">
 		<nav class="navbar bg-light navbar-light">
 			<ul class="navbar-nav justify-content-center" id="navbar">
+			
+			<!-- scvo → shopCategoryVo -->
+			<c:forEach var="scvo" items="${scList }">
 				<li class="nav-item">
-					<a class="nav-link" href="#"> 축구화 / 풋살화 </a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"> 트레이닝화 </a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"> 축구공 </a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"> 축구용품 </a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"> 골키퍼용품 </a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"> 기능성웨어 </a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"> 유니폼 </a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"> 의류 </a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"> 타종목 </a>
+					<a class="nav-link" href="#">${scvo.category_name }</a>
 				</li>
 				
+			</c:forEach>
 			</ul>
 		</nav>
 	</div>
@@ -86,7 +68,7 @@
 	<div style="height: 30px;"></div>
 	
 	<div class="row">
-	
+		
 	</div>
 </div>
 

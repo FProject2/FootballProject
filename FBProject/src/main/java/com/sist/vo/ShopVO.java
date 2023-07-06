@@ -58,5 +58,5 @@ public class ShopVO {
 	public void setOrigin(String origin) {
 		this.origin = origin;
 	}
-	
+
 }
