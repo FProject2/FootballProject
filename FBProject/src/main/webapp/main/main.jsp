@@ -61,67 +61,54 @@
 </head>
 <body>
 
-            <!--Home Sections-->
+<section id="home" class="home bg-black fix">
+	<div class="overlay"></div>
 
-            <section id="home" class="home bg-black fix">
-                <div class="overlay"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="main_home text-center">
-                            <div class="col-md-12">
-                                <div class="hello_slid">
-                                    <div class="slid_item">
-                                        <div class="home_text ">
-                                            <img src="../main/assets/images/3.jpg" style="width:1920px;height:600px" class="homeslide">
-                                   
-                                        </div>
-
-   
-                                    </div><!-- End off slid item -->
-                                    <div class="slid_item">
-                                        <div class="home_text ">
-                                            <img src="../main/assets/images/5.jpg" style="width:1920px;height:600px" class="homeslide">
-                                   
-                                        </div>
-
-                                  
-                                    </div><!-- End off slid item -->
-                                    <div class="slid_item">
-                                        <div class="home_text ">
-                                            <img src="../main/assets/images/6.jpg" style="width:1920px;height:600px" class="homeslide">
-                                   
-                                        </div>
-
-                              
-                                    </div><!-- End off slid item -->
-                                    
-                                                                        <div class="slid_item">
-                                        <div class="home_text ">
-                                            <img src="../main/assets/images/7.jpg" style="width:1920px;height:600px" class="homeslide">
-                                   
-                                        </div>
-
-                              
-                                    </div><!-- End off slid item -->
-                                    
-                                                                        <div class="slid_item">
-                                        <div class="home_text ">
-                                            <img src="../main/assets/images/8.jpg" style="width:1920px;height:600px" class="homeslide">
-                                   
-                                        </div>
-
-                              
-                                    </div><!-- End off slid item -->
-                                    
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                    </div><!--End off row-->
-                </div><!--End off container -->
-            </section> <!--End off Home Sections-->
+	<div class="container">
+		<div class="row">
+			<div class="main_home text-center">
+				<div class="col-md-12">
+					<div class="hello_slid">
+					
+						<div class="slid_item">
+							<div class="home_text ">
+								<img src="../main/assets/images/3.jpg" style="width:1920px;height:600px" class="homeslide">
+							</div>
+						</div><!-- End off slid item -->
+					
+					<div class="slid_item">
+						<div class="home_text ">
+							<img src="../main/assets/images/5.jpg" style="width:1920px;height:600px" class="homeslide">
+						</div>
+					</div><!-- End off slid item -->
+					
+					<div class="slid_item">
+						<div class="home_text ">
+							<img src="../main/assets/images/6.jpg" style="width:1920px;height:600px" class="homeslide">
+						</div>
+					</div><!-- End off slid item -->
+					
+					<div class="slid_item">
+						<div class="home_text ">
+							<img src="../main/assets/images/7.jpg" style="width:1920px;height:600px" class="homeslide">
+						</div>
+					</div><!-- End off slid item -->
+					
+					<div class="slid_item">
+						<div class="home_text ">
+							<img src="../main/assets/images/8.jpg" style="width:1920px;height:600px" class="homeslide">
+						</div>
+					</div><!-- End off slid item -->
+					        
+					</div>
+				</div>
+			
+			</div>
+		
+		
+		</div><!--End off row-->
+	</div><!--End off container -->
+</section> <!--End off Home Sections-->
 
             <!--Business Section-->
             <section id="business" class="business bg-grey roomy-70">

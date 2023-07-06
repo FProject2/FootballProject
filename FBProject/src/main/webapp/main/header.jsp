@@ -70,7 +70,7 @@
 	<!-- navbar menu -->
 	<div class="collapse navbar-collapse" id="navbar-menu">
 		<ul class="nav navbar-nav navbar-right">
-			<a href="#contact"><img src="../main/assets/images/shop_icon.png" style="padding-top: 13px"></a>
+			<a href="../shop/shop.do"><img src="../main/assets/images/shop_icon.png" style="padding-top: 13px"></a>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="../main/main.do">구장예약</a></li>
