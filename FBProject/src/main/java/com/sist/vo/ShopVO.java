@@ -2,8 +2,20 @@ package com.sist.vo;
 
 public class ShopVO {
 	private int gno, cprice, price, cno;
-	private String goods_name, goods_image, goods_detail, brand, origin;
+	private String goods_name, goods_image, goods_detail, brand, origin, dbcprice, dbprice;
 	
+	public String getDbcprice() {
+		return dbcprice;
+	}
+	public void setDbcprice(String dbcprice) {
+		this.dbcprice = dbcprice;
+	}
+	public String getDbprice() {
+		return dbprice;
+	}
+	public void setDbprice(String dbprice) {
+		this.dbprice = dbprice;
+	}
 	public int getGno() {
 		return gno;
 	}

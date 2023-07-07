@@ -17,7 +17,7 @@
 	#navbar {
 		text-align: center;
 		margin-top: 25px;
-		margin-left: 50px;
+		margin-left: 65px;
 	}
 	
 	.nav-item {
@@ -30,41 +30,88 @@
 		color : white;
 	}
 	
+	.card {
+		margin-bottom: 50px;
+	}
+	
+	.card-img-top {
+		width:100%;
+		align-self: center;
+		margin-top: 50px;
+	}
+	
+	.card-title {
+		color: #505050;
+		font-size: 15px;
+		width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		text-align: center;
+		margin-top: 20px;
+		margin-bottom: 0px;
+	}
+	
+	.card-text {
+		color: #505050;
+		font-size: 14px;
+	}
+	
 </style>
 </head>
 <body>
+
 <div style="height: 100px;"></div>
  
 <div class="container">
-	<div class="row" id="menu">
-		<nav class="navbar bg-light navbar-light">
-			<ul class="navbar-nav justify-content-center" id="navbar">
-			
-			<!-- scvo → shopCategoryVo -->
-			<c:forEach var="scvo" items="${scList }">
-				<li class="nav-item">
-					<a class="nav-link" href="#">${scvo.category_name }</a>
-				</li>
+	<div class="row" id="list">
+		<div class="row" id="menu">
+			<nav class="navbar bg-light navbar-light">
+				<ul class="navbar-nav justify-content-center" id="navbar">
 				
-			</c:forEach>
-			</ul>
-		</nav>
-	</div>
-	
-	<div style="height: 30px;"></div>
-	
-	<!-- 상품 리스트 -->
-	<div class="row">
-		<div class="col">
-			<c:forEach var="vo" items="${list }">
-			<div class="card" style="width: 20rem;">
-				<img src="${vo.goods_image }" class="card-img-top" alt="Card image cap">
-					<div class="card-block">
-						<h4>${vo.goods_name }</h4>
-					</div>
-			</div>
-			</c:forEach>
+				<!-- scvo → shopCategoryVo -->
+				<c:forEach var="scvo" items="${scList }">
+					<li class="nav-item">
+						<a class="nav-link" href="#">${scvo.category_name }</a>
+					</li>
+					
+				</c:forEach>
+				</ul>
+			</nav>
 		</div>
+		
+		
+		
+		<!-- 상품 리스트 -->
+		<div class="row" style="margin-top: 30px;">
+		<c:forEach var="vo" items="${list }">
+			<div class="col-md-3">
+				<div class="card" style="display: inline;">
+					<img src="${vo.goods_image }" class="card-img-top" alt="Card image cap">
+						<div class="card-block text-center">
+							<p class="card-title"><b>${vo.goods_name }</b></p>
+							<hr>
+							<p class="card-text">소비자가 : <span style="text-decoration: line-through; color: #505050">${vo.dbcprice }원</span>&nbsp;&nbsp;<b style="color:#EB4646">판매가 : ${vo.dbprice }원</b></p>
+						</div>
+				</div>
+			</div>
+		</c:forEach>
+		</div>
+		
+		<div style="height: 50px;"></div>
+		
+		<div class="row text-center">
+			  <ul class="pagination">
+			    <li class="page-item"><a class="page-link" href="../shop/shop.do?page=${curpage>1?curpage-1:curpage }">이전</a></li>
+			    <c:forEach var="" items="">
+			    	<li class="page-item"><a class="page-link" href="#">1</a></li>
+			    </c:forEach>
+			    <li class="page-item"><a class="page-link" href="../shop/shop.do?page=${curpage<totalpage?curpage+1:curpage }">다음</a></li>
+			  </ul>
+		</div>
+		
+		<div style="height: 80px;"></div>
+		
 	</div>
 </div>
 

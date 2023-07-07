@@ -2,6 +2,8 @@ package com.sist.dao;
 
 import java.util.*;
 import java.sql.*;
+import java.text.DecimalFormat;
+
 import com.sist.vo.*;
 import com.sist.common.*;
 
@@ -53,13 +55,13 @@ public class ShopDAO {
 		try {
 			conn = db.getConnection();
 			// cprice : 소비자가(원가), price : 판매가
-			String sql = "SELECT gno, goods_name, goods_image, brand, cprice, price, cno, num "
+			String sql = "SELECT gno, goods_name, goods_image, brand, TO_CHAR(cprice, '999,999'), TO_CHAR(price, '999,999'), cno, num "
 					+ "FROM (SELECT gno, goods_name, goods_image, brand, cprice, price, cno, rownum AS num "
 					+ "FROM (SELECT /*+ INDEX_ASX(gs_gno_pk)*/gno, goods_name, goods_image, brand, cprice, price, cno "
 					+ "FROM goods)) WHERE num BETWEEN ? AND ?";
 			ps = conn.prepareStatement(sql);
 			
-			int rowSize = 24;
+			int rowSize = 12;
 			int start = (rowSize*page)-(rowSize-1);
 			int end = rowSize*page;
 			
@@ -74,10 +76,9 @@ public class ShopDAO {
 				vo.setGoods_name(rs.getString(2));
 				vo.setGoods_image(rs.getString(3));
 				vo.setBrand(rs.getString(4));
-				vo.setCprice(rs.getInt(5));
-				vo.setPrice(rs.getInt(6));
+				vo.setDbcprice(rs.getString(5));
+				vo.setDbprice(rs.getString(6));
 				vo.setCno(rs.getInt(7));
-				
 				list.add(vo);
 			}
 			rs.close();
@@ -99,7 +100,7 @@ public class ShopDAO {
 		try {
 			conn = db.getConnection();
 			
-			String sql = "SELECT CEIL(COUNT(*)/24.0) FROM goods";
+			String sql = "SELECT CEIL(COUNT(*)/12.0) FROM goods";
 			ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			rs.next();
