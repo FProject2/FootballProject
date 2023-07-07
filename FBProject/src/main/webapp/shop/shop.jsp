@@ -33,20 +33,6 @@
 </style>
 </head>
 <body>
-<!-- 
-		주니어/여성
-		축구화/풋살화
-		트레이닝화
-		축구공
-		축구용품
-		골피커용품
-		기능성웨어
-		유니폼
-		의류
-		타종목
- -->
-
-<!-- 여백 -->
 <div style="height: 100px;"></div>
  
 <div class="container">
@@ -67,8 +53,18 @@
 	
 	<div style="height: 30px;"></div>
 	
+	<!-- 상품 리스트 -->
 	<div class="row">
-		
+		<div class="col">
+			<c:forEach var="vo" items="${list }">
+			<div class="card" style="width: 20rem;">
+				<img src="${vo.goods_image }" class="card-img-top" alt="Card image cap">
+					<div class="card-block">
+						<h4>${vo.goods_name }</h4>
+					</div>
+			</div>
+			</c:forEach>
+		</div>
 	</div>
 </div>
 
