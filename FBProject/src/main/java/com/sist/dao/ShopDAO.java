@@ -49,7 +49,7 @@ public class ShopDAO {
 	}
 	
 	//전체 물품 리스트
-	public List<ShopVO> shopListData(int page){
+	public List<ShopVO> shopListData(int cno, int page){
 		List<ShopVO> list = new ArrayList<ShopVO>();
 		
 		try {
@@ -58,15 +58,16 @@ public class ShopDAO {
 			String sql = "SELECT gno, goods_name, goods_image, brand, TO_CHAR(cprice, '999,999'), TO_CHAR(price, '999,999'), cno, num "
 					+ "FROM (SELECT gno, goods_name, goods_image, brand, cprice, price, cno, rownum AS num "
 					+ "FROM (SELECT /*+ INDEX_ASX(gs_gno_pk)*/gno, goods_name, goods_image, brand, cprice, price, cno "
-					+ "FROM goods)) WHERE num BETWEEN ? AND ?";
+					+ "FROM goods)) WHERE cno=? AND num BETWEEN ? AND ?";
 			ps = conn.prepareStatement(sql);
 			
 			int rowSize = 12;
 			int start = (rowSize*page)-(rowSize-1);
 			int end = rowSize*page;
 			
-			ps.setInt(1, start);
-			ps.setInt(2, end);
+			ps.setInt(1, cno);
+			ps.setInt(2, start);
+			ps.setInt(3, end);
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
@@ -115,5 +116,21 @@ public class ShopDAO {
 		
 		
 		return total;
+	}
+	
+	// 상세 정보
+	public ShopVO shopDetailData(int gno) {
+		ShopVO vo = new ShopVO();
+		
+		try {
+			conn = db.getConnection();
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			db.disConnection(conn, ps);
+		}
+		
+		return vo;
 	}
 }

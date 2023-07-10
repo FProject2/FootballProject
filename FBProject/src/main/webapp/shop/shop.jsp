@@ -72,15 +72,12 @@
 				<!-- scvo → shopCategoryVo -->
 				<c:forEach var="scvo" items="${scList }">
 					<li class="nav-item">
-						<a class="nav-link" href="#">${scvo.category_name }</a>
+						<a class="nav-link" href="../shop/shop.do?cno=${scvo.cno }&page=${curpage }">${scvo.category_name }</a>
 					</li>
-					
 				</c:forEach>
 				</ul>
 			</nav>
 		</div>
-		
-		
 		
 		<!-- 상품 리스트 -->
 		<div class="row" style="margin-top: 30px;">
@@ -102,11 +99,11 @@
 		
 		<div class="row text-center">
 			  <ul class="pagination">
-			    <li class="page-item"><a class="page-link" href="../shop/shop.do?page=${curpage>1?curpage-1:curpage }">이전</a></li>
-			    <c:forEach var="" items="">
-			    	<li class="page-item"><a class="page-link" href="#">1</a></li>
+			    <li class="page-item"><a class="page-link" href="../shop/shop.do?cno=${vo.cno }&page=${curpage>1?curpage-1:curpage }">이전</a></li>
+			    <c:forEach var="i" begin="${startPage }" end="${endPage }">
+			    	<li class="page-item ${curpage==i?'active':'' }"><a class="page-link" href="../shop/shop.do?cno=${vo.cno }&page=${i }">${i }</a></li>
 			    </c:forEach>
-			    <li class="page-item"><a class="page-link" href="../shop/shop.do?page=${curpage<totalpage?curpage+1:curpage }">다음</a></li>
+			    <li class="page-item"><a class="page-link" href="../shop/shop.do?cno=${vo.cno }&page=${curpage<totalpage?curpage+1:curpage }">다음</a></li>
 			  </ul>
 		</div>
 		
