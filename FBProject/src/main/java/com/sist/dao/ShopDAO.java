@@ -19,6 +19,37 @@ public class ShopDAO {
 		return dao;
 	}
 	
+	// 메인 페이지 출력용 상품 리스트
+	public List<ShopVO> mainGoodsList() {
+		List<ShopVO> list = new ArrayList<ShopVO>();
+		
+		try {
+			conn = db.getConnection();
+			
+			String sql = "SELECT gno, goods_name, goods_image, brand "
+					+ "FROM goods WHERE gno IN('633','1232','3800','649','1194','910','51','83','729','1077','2543','1373')";
+			ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				ShopVO vo = new ShopVO();
+				vo.setGno(rs.getInt(1));
+				vo.setGoods_name(rs.getString(2));
+				vo.setGoods_image(rs.getString(3));
+				vo.setBrand(rs.getString(4));
+				list.add(vo);
+			}
+			rs.close();
+			
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			db.disConnection(conn, ps);
+		}
+		
+		return list;
+	}
+	
 	public List<ShopCategoryVO> shopCategoryList(){
 		List<ShopCategoryVO> list = new ArrayList<ShopCategoryVO>();
 		
@@ -58,7 +89,7 @@ public class ShopDAO {
 			String sql = "SELECT gno, goods_name, goods_image, brand, TO_CHAR(cprice, '999,999'), TO_CHAR(price, '999,999'), cno, num "
 					+ "FROM (SELECT gno, goods_name, goods_image, brand, cprice, price, cno, rownum AS num "
 					+ "FROM (SELECT /*+ INDEX_ASX(gs_gno_pk)*/gno, goods_name, goods_image, brand, cprice, price, cno "
-					+ "FROM goods)) WHERE cno=? AND num BETWEEN ? AND ?";
+					+ "FROM goods WHERE cno=?)) WHERE num BETWEEN ? AND ?";
 			ps = conn.prepareStatement(sql);
 			
 			int rowSize = 12;
@@ -125,6 +156,24 @@ public class ShopDAO {
 		try {
 			conn = db.getConnection();
 			
+			String sql = "SELECT gno, goods_name, goods_image, goods_detail_image, brand, origin, TO_CHAR(cprice,'999,999'), TO_CHAR(price,'999,999'), price "
+					+ "FROM goods WHERE gno=?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, gno);
+			ResultSet rs = ps.executeQuery();
+			
+			rs.next();
+			vo.setGno(rs.getInt(1));
+			vo.setGoods_name(rs.getString(2));
+			vo.setGoods_image(rs.getString(3));
+			vo.setGoods_detail(rs.getString(4));
+			vo.setBrand(rs.getString(5));
+			vo.setOrigin(rs.getString(6));
+			vo.setDbcprice(rs.getString(7));
+			vo.setDbprice(rs.getString(8));
+			vo.setPrice(rs.getInt(9));
+			rs.close();
+			
 		}catch(Exception ex) {
 			ex.printStackTrace();
 		}finally {
@@ -132,5 +181,38 @@ public class ShopDAO {
 		}
 		
 		return vo;
+	}
+	
+	// 사이즈
+	public List<ShopSizeVO> shopSizeData(int gno){
+		List<ShopSizeVO> list = new ArrayList<ShopSizeVO>();
+		
+		try {
+			conn = db.getConnection();
+			
+			String sql = "SELECT sno, gsize, gno, stock FROM sizetable WHERE gno=?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, gno);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				ShopSizeVO vo = new ShopSizeVO();
+				vo.setSno(rs.getInt(1));
+				vo.setGsize(rs.getString(2));
+				vo.setGno(rs.getInt(3));
+				vo.setStock(rs.getInt(4));
+				list.add(vo);
+			}
+			
+			rs.close();
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			db.disConnection(conn, ps);
+			
+		}
+		
+		return list;
 	}
 }

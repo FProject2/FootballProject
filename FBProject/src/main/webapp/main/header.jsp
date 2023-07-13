@@ -91,6 +91,10 @@
 			<c:if test="${sessionScope.id!=null }">
 			<li><a href="../member/logout.do">로그아웃</a></li>
 			</c:if>
+			
+			<c:if test="${bCheck==true }">
+			<li><a href="../shop/shopCart.do">장바구니</a></li>
+			</c:if>
 		</ul>
 	</div><!-- /.navbar-collapse -->
 	</div>

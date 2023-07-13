@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -320,228 +321,107 @@
             </section><!-- End off Business section -->
 
 
-            <!--product section-->
-            <section id="product" class="product">
-                <div class="container">
-                    <div class="main_product roomy-80">
-                        <div class="head_title text-center fix">
-                            <h2 class="text-uppercase">이번 주 인기상품</h2>
-                            <h5>인기 폭발! 이번 주 가장 인기 있는 상품 TOP 10</h5>
-                        </div>
+<!--product section-->
+<section id="product" class="product">
+    <div class="container">
+        <div class="main_product roomy-80">
+            <div class="head_title text-center fix">
+                <h2 class="text-uppercase">이번 주 인기상품</h2>
+                <h5>인기 폭발! 이번 주 가장 인기 있는 상품 TOP 12</h5>
+            </div>
 
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
 
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner" role="listbox">
-                                <div class="item active">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="https://plab-football.s3.amazonaws.com/media/%E1%84%83%E1%85%A2%E1%84%80%E1%85%AE_%E1%84%8B%E1%85%A6%E1%84%91%E1%85%B3%E1%84%8B%E1%85%A6%E1%84%8B%E1%85%B5_%E1%84%91%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3_%E1%84%8B%E1%85%B2%E1%86%AF%E1%84%92%E1%85%A1%E1%84%8C%E1%85%A5%E1%86%B7_1.jpg" alt="" width="290" height="225"/>
-                                                        
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img2.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img2.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img3.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img3.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img4.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img4.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="container">
+                            <div class="row">
+                           	<c:forEach var="vo" items="${list }" begin="0" end="3">
+                                <div class="col-sm-3">
+                                    <div class="port_item xs-m-top-30">
+                                        <div class="port_img">
+                                        	<a href="../shop/shop_detail.do?gno=${vo.gno }">
+                                            <img src="${vo.goods_image }" alt="" width="290" height="250"/>
+                                            </a>
+                                        </div>
+                                        <div class="port_caption m-top-20 text-center">
+                                            <h5>${vo.brand }</h5>
+                                            <h6>${vo.goods_name }</h6>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="item">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img1.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img1.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img2.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img2.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img3.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img3.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img4.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img4.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img1.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img1.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img2.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img2.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img3.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img3.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img4.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img4.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                               </c:forEach>
                             </div>
-
-                            <!-- Controls -->
-                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                                <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                <span class="sr-only">Previous</span>
-                            </a>
-
-                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                <span class="sr-only">Next</span>
-                            </a>
                         </div>
-                    </div><!-- End off row -->
-                </div><!-- End off container -->
-            </section><!-- End off Product section -->
+                    </div>
+
+                    <div class="item">
+                        <div class="container">
+                            <div class="row">
+                            <c:forEach var="vo" items="${list }" begin="4" end="7">
+                                <div class="col-sm-3">
+                                    <div class="port_item xs-m-top-30">
+                                        <div class="port_img">
+                                        	<a href="../shop/shop_detail.do?gno=${vo.gno }">
+                                            <img src="${vo.goods_image }" alt="" width="290" height="250"/>
+                                            </a>
+                                        </div>
+                                        <div class="port_caption m-top-20 text-center">
+                                            <h5>${vo.brand }</h5>
+                                            <h6>${vo.goods_name }</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:forEach> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="container">
+                            <div class="row">
+                            <c:forEach var="vo" items="${list }" begin="8" end="11">
+                                <div class="col-sm-3">
+                                    <div class="port_item xs-m-top-30">
+                                        <div class="port_img">
+                                        	<a href="../shop/shop_detail.do?gno=${vo.gno }">
+                                            <img src="${vo.goods_image }" alt="" width="290" height="250"/>
+                                            </a>
+                                        </div>
+                                        <div class="port_caption m-top-20 text-center">
+                                            <h5>${vo.brand }</h5>
+                                            <h6>${vo.goods_name }</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:forEach>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div><!-- End off row -->
+    </div><!-- End off container -->
+</section><!-- End off Product section -->
 
 
 

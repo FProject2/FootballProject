@@ -17,6 +17,12 @@ public class MainModel {
 		 * FoodDAO dao = FoodDAO.newInstance(); List<CategoryVO> list =
 		 * dao.foodCategoryListData(); request.setAttribute("list", list);
 		 */
+		
+		// 메인 상품 리스트~
+		ShopDAO dao = ShopDAO.newInstance();
+		List<ShopVO> sList = dao.mainGoodsList();
+		
+		request.setAttribute("list", sList);
 		request.setAttribute("main_jsp", "../main/main.jsp");
 		return "../main/home.jsp";
 	}
