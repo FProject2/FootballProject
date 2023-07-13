@@ -15,50 +15,60 @@
 	.hello_slid img{
 			border-radius: 30px;
 		}
-			#reserve .reserve td {
-				padding-top : 15px;
-			    padding-bottom: 20px;
-			}
-  
-       		#reserve .reserve .time, #reserve .reserve .content, #reserve .reserve .state{
-       			font-size: 20px;
-       			vertical-align:middle;
-       			color: black;
-       			font-family: 'Noto Sans KR', sans-serif;
-       		}
+	#reserve .reserve td {
+		padding-top : 15px;
+	    padding-bottom: 20px;
+	}
+	#reserve .reserve .time, #reserve .reserve .content, #reserve .reserve .state{
+		font-size: 20px;
+		vertical-align:middle;
+		color: black;
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+	#reserve .content{
+		line-height: 17px;
+	}
+	#reserve .button-align{
+		text-align: center;
+		font-size: 15px;
+		vertical-align:middle;
+	}
+	#reserve .top-space{
+		max-height: 400px;
+		overflow: auto;
+		margin-top: 10px;
+	}
+	#reserve .top-space::-webkit-scrollbar {
+	    width: 10px;
+	}
+	#reserve .top-space::-webkit-scrollbar-thumb {
+	    background-color: rgb(180, 180, 180);
+	    border-radius: 10px;
+	}
+	#reserve .top-space::-webkit-scrollbar-track {
+	    background-color: #F5F5F5;
+	}
+	#reserve .state .btn-design{
+		border-radius:5px;
+		font-size: 13px;
+		background-color:rgb(64,128,96);
+		color:white;
+	}
        		
-       		#reserve .content{
-       			line-height: 17px;
-       		}
+</style>
 
-       		#reserve .button-align{
-       			text-align: center;
-       			font-size: 15px;
-       			vertical-align:middle;
-       		}
-       		#reserve .top-space{
-       			max-height: 400px;
-       			overflow: auto;
-       			margin-top: 10px;
-       		}
-       		#reserve .top-space::-webkit-scrollbar {
-			    width: 10px;
-			}
-			#reserve .top-space::-webkit-scrollbar-thumb {
-			    background-color: rgb(180, 180, 180);
-			    border-radius: 10px;
-			}
-			#reserve .top-space::-webkit-scrollbar-track {
-			    background-color: #F5F5F5;
-			}
-			#reserve .state .btn-design{
-				border-radius:5px;
-				font-size: 13px;
-				background-color:rgb(64,128,96);
-				color:white;
-			}
-       		
-       </style>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#calendar').click(function() {
+		let x=(document.body.offsetWidth/2)-(500/2)
+		let y=(window.screen.height/2)-(500/2)
+		window.open("../reserve/calendar.do","",'width=320, height=410, left='+x+', top='+y)
+	})
+})
+
+</script>
+
 </head>
 <body>
 
@@ -71,35 +81,13 @@
 				<div class="col-md-12">
 					<div class="hello_slid">
 					
-						<div class="slid_item">
-							<div class="home_text ">
-								<img src="../main/assets/images/3.jpg" style="width:1920px;height:600px" class="homeslide">
-							</div>
-						</div><!-- End off slid item -->
-					
+					<c:forEach var="i" begin="1" end="5">
 					<div class="slid_item">
 						<div class="home_text ">
-							<img src="../main/assets/images/5.jpg" style="width:1920px;height:600px" class="homeslide">
+							<img src="../main/assets/images/${i }.jpg" style="width:1920px;height:600px" class="homeslide">
 						</div>
 					</div><!-- End off slid item -->
-					
-					<div class="slid_item">
-						<div class="home_text ">
-							<img src="../main/assets/images/6.jpg" style="width:1920px;height:600px" class="homeslide">
-						</div>
-					</div><!-- End off slid item -->
-					
-					<div class="slid_item">
-						<div class="home_text ">
-							<img src="../main/assets/images/7.jpg" style="width:1920px;height:600px" class="homeslide">
-						</div>
-					</div><!-- End off slid item -->
-					
-					<div class="slid_item">
-						<div class="home_text ">
-							<img src="../main/assets/images/8.jpg" style="width:1920px;height:600px" class="homeslide">
-						</div>
-					</div><!-- End off slid item -->
+					</c:forEach>
 					        
 					</div>
 				</div>
@@ -121,200 +109,57 @@
                     <h2 class="text-uppercase">구장 예약</h2>
                     <h5>날짜와 지역을 선택하고 구장을 예약하세요</h5>
                 </div>
+                
                 <div class=text-left>
-	        		<input type="button" value="날짜선택" class="btn btn-sm btn-outline-secondary" style="border-radius: 10px;padding: 0.5rem 1rem;">
-	        		<input type="button" value="지역선택" class="btn btn-sm btn-outline-secondary" style="border-radius: 10px;padding: 0.5rem 1rem;">
-	        		<!-- search는 시간 남으면 -->
-	        		<input type="button" class="btn btn-sm" value="검색" style="float: right;margin-left: 5px;background-color: rgb(64,128,96);color: white;">
-	        		<input type="search" style="float: right">
+					<li class="dropdown" style="margin-right: 20px;"><span class="btn btn-sm btn-default">지역 선택</span>
+						<ul class="dropdown-content">
+							<li><a href="../main/main.do?area=서울">서울</a></li>
+							<li><a href="../rmain/main.do?area=경기">경기</a></li>
+							<li><a href="../main/main.do?area=인천">인천</a></li>
+							<li><a href="../main/main.do?area=강원">강원</a></li>
+							<li><a href="../main/main.do?area=대전">대전</a></li>
+							<li><a href="../main/main.do?area=충남&area=세종">충남/세종</a></li>
+							<li><a href="../main/main.do?area=충북">충북</a></li>
+							<li><a href="../main/main.do?area=대구">대구</a></li>
+							<li><a href="../main/main.do?area=경북">경북</a></li>
+							<li><a href="../main/main.do?area=부산">부산</a></li>
+							<li><a href="../main/main.do?area=울산">울산</a></li>
+							<li><a href="../main/main.do?area=경남">경남</a></li>
+							<li><a href="../main/main.do?area=광주">광주</a></li>
+							<li><a href="../main/main.do?area=전남">전남</a></li>
+							<li><a href="../main/main.do?area=전북">전북</a></li>
+							<li><a href="../main/main.do?area=제주">제주</a></li>
+						</ul>
+					</li>
+					
+					<input type="button" class="btn btn-sm btn-default" id="calendar" value="날짜 선택">
+					
         		</div>
 	        		
         		<div class="top-space">
-	        		<!-- <table class="table">
-	        			<tr>
-	        				<td width=10% class="time">15:00</td>
-	        				<td width=80% style="line-height: 20px;" class="content text-left">
-	        					서울 영등포 더에프 필드 A구장<br>
-	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
-	        				</td>
-	        				<td width=10% class="button-align state">
-	        					<input type="button" class="btn btn-sm btn-design" value="예약가능">
-	        				</td>
-	        			</tr>
-	        			<tr>
-	        				<td width=10% class="time">15:00</td>
-	        				<td width=80% style="line-height: 20px;" class="content text-left">
-	        					서울 영등포 더에프 필드 A구장<br>
-	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
-	        				</td>
-	        				<td width=10% class="button-align state">
-	        					<span style="font-weight: lighter;color: gray;font-size: 0.8em;">마감</span>
-	        				</td>
-	        			</tr>
 	        			
-	        		</table> -->
-	        			
-	        				<div class="card border-left-success shadow h-100 reserve">
-                                <div class="card-body">
-                                    <div class="col-md-1 time">
-                                    15:00
-                                    </div>
-					        		<div class="col-md-10 content text-left">
-					        		서울 영등포 더에프 필드 A구장<br>
-	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
-					        		</div>	
-					        		<div class="col-md-1 button-align state">
-					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
-					        		</div>	
-                                </div>
-                           	</div>
-	        				<div style="height:3px;"></div>
-	        			
-	        				<div class="card border-left-success shadow h-100 reserve">
-                                <div class="card-body">
-                                    <div class="col-md-1 time">
-                                    15:00
-                                    </div>
-					        		<div class="col-md-10 content text-left">
-					        		서울 영등포 더에프 필드 A구장<br>
-	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
-					        		</div>	
-					        		<div class="col-md-1 button-align state">
-					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
-					        		</div>	
-                                </div>
-                           	</div>
-	        				<div style="height:3px;"></div>
-	        			
-	        				<div class="card border-left-success shadow h-100 reserve">
-                                <div class="card-body">
-                                    <div class="col-md-1 time">
-                                    15:00
-                                    </div>
-					        		<div class="col-md-10 content text-left">
-					        		서울 영등포 더에프 필드 A구장<br>
-	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
-					        		</div>	
-					        		<div class="col-md-1 button-align state">
-					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
-					        		</div>	
-                                </div>
-                           	</div>
-	        				<div style="height:3px;"></div>
-	        			
-	        				<div class="card border-left-success shadow h-100 reserve">
-                                <div class="card-body">
-                                    <div class="col-md-1 time">
-                                    15:00
-                                    </div>
-					        		<div class="col-md-10 content text-left">
-					        		서울 영등포 더에프 필드 A구장<br>
-	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
-					        		</div>	
-					        		<div class="col-md-1 button-align state">
-					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
-					        		</div>	
-                                </div>
-                           	</div>
-	        				<div style="height:3px;"></div>
-	        			
-	        				<div class="card border-left-success shadow h-100 reserve">
-                                <div class="card-body">
-                                    <div class="col-md-1 time">
-                                    15:00
-                                    </div>
-					        		<div class="col-md-10 content text-left">
-					        		서울 영등포 더에프 필드 A구장<br>
-	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
-					        		</div>	
-					        		<div class="col-md-1 button-align state">
-					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
-					        		</div>	
-                                </div>
-                           	</div>
-	        				<div style="height:3px;"></div>
-	        			
-	        				<div class="card border-left-success shadow h-100 reserve">
-                                <div class="card-body">
-                                    <div class="col-md-1 time">
-                                    15:00
-                                    </div>
-					        		<div class="col-md-10 content text-left">
-					        		서울 영등포 더에프 필드 A구장<br>
-	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
-					        		</div>	
-					        		<div class="col-md-1 button-align state">
-					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
-					        		</div>	
-                                </div>
-                           	</div>
-	        				<div style="height:3px;"></div>
-	        			
-	        				<div class="card border-left-success shadow h-100 reserve">
-                                <div class="card-body">
-                                    <div class="col-md-1 time">
-                                    15:00
-                                    </div>
-					        		<div class="col-md-10 content text-left">
-					        		서울 영등포 더에프 필드 A구장<br>
-	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
-					        		</div>	
-					        		<div class="col-md-1 button-align state">
-					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
-					        		</div>	
-                                </div>
-                           	</div>
-	        				<div style="height:3px;"></div>
-	        			
-	        				<div class="card border-left-success shadow h-100 reserve">
-                                <div class="card-body">
-                                    <div class="col-md-1 time">
-                                    15:00
-                                    </div>
-					        		<div class="col-md-10 content text-left">
-					        		서울 영등포 더에프 필드 A구장<br>
-	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
-					        		</div>	
-					        		<div class="col-md-1 button-align state">
-					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
-					        		</div>	
-                                </div>
-                           	</div>
-	        				<div style="height:3px;"></div>
-	        			
-	        				<div class="card border-left-success shadow h-100 reserve">
-                                <div class="card-body">
-                                    <div class="col-md-1 time">
-                                    15:00
-                                    </div>
-					        		<div class="col-md-10 content text-left">
-					        		서울 영등포 더에프 필드 A구장<br>
-	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
-					        		</div>	
-					        		<div class="col-md-1 button-align state">
-					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
-					        		</div>	
-                                </div>
-                           	</div>
-	        				<div style="height:3px;"></div>
-	        			
-	        				<div class="card border-left-success shadow h-100 reserve">
-                                <div class="card-body">
-                                    <div class="col-md-1 time">
-                                    15:00
-                                    </div>
-					        		<div class="col-md-10 content text-left">
-					        		서울 영등포 더에프 필드 A구장<br>
-	        					<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
-					        		</div>	
-					        		<div class="col-md-1 button-align state">
-					        		<input type="button" class="btn btn-sm btn-design" value="예약가능">
-					        		</div>	
-                                </div>
-                           	</div>
-	        				<div style="height:3px;"></div>
-	        			
+					<div class="card border-left-success shadow h-100 reserve">
+						<div class="card-body">
+							<div class="col-md-1 time">
+								15:00
+							</div>
+							
+							<div class="col-md-10 content text-left">
+								서울 영등포 더에프 필드 A구장<br>
+								<sub style="color: gray;font-size: 0.6em">● 서울특별시 영등포구 선유로 138</sub>
+							</div>
+								
+							<div class="col-md-1 button-align state">
+								<input type="button" class="btn btn-sm btn-design" value="예약가능">
+							</div>	
+						</div>
+					</div>
+                           	
+	        	<div style="height:3px;"></div>
+	        	
         		</div>
+        	
+        		
       		</div>
 	      
         <!-- reserve-end -->
@@ -343,17 +188,17 @@
                     <div class="item active">
                         <div class="container">
                             <div class="row">
-                           	<c:forEach var="vo" items="${list }" begin="0" end="3">
+                           	<c:forEach var="svo" items="${sList }" begin="0" end="3">
                                 <div class="col-sm-3">
                                     <div class="port_item xs-m-top-30">
                                         <div class="port_img">
-                                        	<a href="../shop/shop_detail.do?gno=${vo.gno }">
-                                            <img src="${vo.goods_image }" alt="" width="290" height="250"/>
+                                        	<a href="../shop/shop_detail.do?gno=${svo.gno }">
+                                            <img src="${svo.goods_image }" alt="" width="290" height="250"/>
                                             </a>
                                         </div>
                                         <div class="port_caption m-top-20 text-center">
-                                            <h5>${vo.brand }</h5>
-                                            <h6>${vo.goods_name }</h6>
+                                            <h5>${svo.brand }</h5>
+                                            <h6>${svo.goods_name }</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -365,17 +210,17 @@
                     <div class="item">
                         <div class="container">
                             <div class="row">
-                            <c:forEach var="vo" items="${list }" begin="4" end="7">
+                            <c:forEach var="svo" items="${sList }" begin="4" end="7">
                                 <div class="col-sm-3">
                                     <div class="port_item xs-m-top-30">
                                         <div class="port_img">
-                                        	<a href="../shop/shop_detail.do?gno=${vo.gno }">
-                                            <img src="${vo.goods_image }" alt="" width="290" height="250"/>
+                                        	<a href="../shop/shop_detail.do?gno=${svo.gno }">
+                                            <img src="${svo.goods_image }" alt="" width="290" height="250"/>
                                             </a>
                                         </div>
                                         <div class="port_caption m-top-20 text-center">
-                                            <h5>${vo.brand }</h5>
-                                            <h6>${vo.goods_name }</h6>
+                                            <h5>${svo.brand }</h5>
+                                            <h6>${svo.goods_name }</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -387,17 +232,17 @@
                     <div class="item">
                         <div class="container">
                             <div class="row">
-                            <c:forEach var="vo" items="${list }" begin="8" end="11">
+                            <c:forEach var="svo" items="${sList }" begin="8" end="11">
                                 <div class="col-sm-3">
                                     <div class="port_item xs-m-top-30">
                                         <div class="port_img">
-                                        	<a href="../shop/shop_detail.do?gno=${vo.gno }">
-                                            <img src="${vo.goods_image }" alt="" width="290" height="250"/>
+                                        	<a href="../shop/shop_detail.do?gno=${svo.gno }">
+                                            <img src="${svo.goods_image }" alt="" width="290" height="250"/>
                                             </a>
                                         </div>
                                         <div class="port_caption m-top-20 text-center">
-                                            <h5>${vo.brand }</h5>
-                                            <h6>${vo.goods_name }</h6>
+                                            <h5>${svo.brand }</h5>
+                                            <h6>${svo.goods_name }</h6>
                                         </div>
                                     </div>
                                 </div>

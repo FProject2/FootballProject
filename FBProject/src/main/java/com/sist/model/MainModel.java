@@ -12,17 +12,24 @@ public class MainModel {
 	@RequestMapping("main/main.do")
 	public String main_page(HttpServletRequest request, HttpServletResponse response)
 	{
-		// home.jsp로 카테고리 보내기
-		/*
-		 * FoodDAO dao = FoodDAO.newInstance(); List<CategoryVO> list =
-		 * dao.foodCategoryListData(); request.setAttribute("list", list);
-		 */
+		try {
+			request.setCharacterEncoding("UTF-8");
+		}catch(Exception ex) {}
+		
+		// 예약 구장 리스트
+		String area = request.getParameter("area");
+		if(area==null) {
+			area="서울";
+		}
+		ReserveDAO dao =ReserveDAO.newInstance();
+		List<GroundDetailVO> list = dao.groundCategoryListData(area);
+		request.setAttribute("list", list);
 		
 		// 메인 상품 리스트~
-		ShopDAO dao = ShopDAO.newInstance();
-		List<ShopVO> sList = dao.mainGoodsList();
+		ShopDAO sdao = ShopDAO.newInstance();
+		List<ShopVO> sList = sdao.mainGoodsList();
+		request.setAttribute("sList", sList);
 		
-		request.setAttribute("list", sList);
 		request.setAttribute("main_jsp", "../main/main.jsp");
 		return "../main/home.jsp";
 	}

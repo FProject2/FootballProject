@@ -41,10 +41,12 @@ public class MemberModel {
 			out.println(count);
 		} catch (Exception e) {}
 	}
+	
 	@RequestMapping("member/postfind.do")
 	public String memberPostFind(HttpServletRequest request, HttpServletResponse response) {
 		return "../member/postfind.jsp";
 	}
+	
 	@RequestMapping("member/postfind_result.do")
 	public String memberPostFindResult(HttpServletRequest request, HttpServletResponse response) {
 		try {
