@@ -95,6 +95,7 @@ public class ShopModel {
 		
 		ShopDAO dao = ShopDAO.newInstance();
 		
+		
 		request.setAttribute("bCheck", true);
 		request.setAttribute("main_jsp", "../shop/shopOrder.jsp");
 		return "../main/home.jsp";

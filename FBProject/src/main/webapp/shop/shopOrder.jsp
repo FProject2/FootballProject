@@ -54,31 +54,33 @@
 				<tr>
 					<th width=10% class="success text-center">이름</th>
 					<td width=40%>
-						<input type="text" name=name id=name>
+						<input type="text" class="form-control-sm" name=name id=name>
 					</td>
 					<th width=10% class="success text-center">연락처</th>
 					<td width=40%>
-						
-						<input type="text" name=phone id=phone>
+						<select name=phone1>
+		  					<option>010</option>
+		  				</select>
+						<input type="text" class="form-control-sm" name=phone id=phone placeholder=" -를 제외하고 입력하세요">
 					</td>
 				</tr>
 				<tr>
 					<th width=10% class="success text-center">우편번호</th>
 					<td width=90% colspan="3">
-						<input type="text" name=post id=post style="margin-right: 10px;display: inline;">
+						<input type="text" class="form-control-sm" name=post id=post style="margin-right: 10px;display: inline;">
 						<input type="button" class="btn btn-sm btn-default" value="우편번호 검색">
 					</td>
 				</tr>
 				<tr>
 					<th width=10% class="success text-center">주소</th>
 					<td width=90% colspan="3">
-						<input type="text" name=addr1 id=addr1>
+						<input type="text" class="form-control-sm" name=addr1 id=addr1 size=100 readonly>
 					</td>
 				</tr>
 				<tr>
 					<th width=10% class="success text-center">상세주소</th>
 					<td width=90% colspan="3">
-						<input type="text" name=addr2 id=addr2>
+						<input type="text" class="form-control-sm" name=addr2 id=addr2>
 					</td>
 				</tr>
 			</table>

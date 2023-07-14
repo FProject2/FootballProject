@@ -6,11 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- <style type="text/css">
-	.hello_slid img{
-		border-radius: 30px;
-	}
-</style> -->
 <style type="text/css">
 	.hello_slid img{
 			border-radius: 30px;
@@ -60,26 +55,23 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
 $(function() {
+	$.ajax({
+		type:'post',
+		url:'../reserve/reserve_list.do',
+		data:{"area":"서울"},
+		success:function(result){
+			$('#top-space').html(result);
+		}
+	})
+	
 	let area;
-    $( "#calendar" ).datepicker();
+
 	$('.area').click(function(){
 		area=$(this).text();
 		$.ajax({
 			type:'post',
 			url:'../reserve/reserve_list.do',
 			data:{"area":area},
-			success:function(result){
-				$('#top-space').html(result);
-			}
-		})
-	})
-	
-	$('.date').click(function(){
-		date=$(this).text()
-		$.ajax({
-			type:'post',
-			url:'../reserve/reserve_list.do',
-			data:{"area": area, "date":date},
 			success:function(result){
 				$('#top-space').html(result);
 			}
@@ -97,22 +89,20 @@ $(function() {
 
 	<div class="container" style="margin-top: 10px;">
 		<div class="row">
-			<div class="main_home text-center">
-				<div class="col-md-12">
-					<div class="hello_slid">
-					<c:forEach var="i" begin="1" end="5">
-					<div class="slid_item">
-						<div class="home_text ">
-							<img src="../main/assets/images/${i }.jpg" style="width:1920px;height:500px;object-fit: cover;" class="homeslide">
-						</div>
-					</div><!-- End off slid item -->
-					</c:forEach>  
+			<div class="main_home text-center col-md-12 hello_slid">
+			
+				<c:forEach var="i" begin="1" end="5">
+				<div class="slid_item">
+					<div class="home_text ">
+						<img src="../main/assets/images/${i }.jpg" style="width:1920px;height:500px;object-fit: cover;" class="homeslide">
 					</div>
 				</div>
+				</c:forEach>  
+			
 			</div>
-		</div><!--End off row-->
-	</div><!--End off container -->
-</section> <!--End off Home Sections-->
+		</div>
+	</div>
+</section>
 
             <!--Business Section-->
             <section id="business" class="business bg-grey roomy-70">
@@ -144,12 +134,8 @@ $(function() {
 							<li><a class="area">전북</a></li>
 							<li><a class="area">제주</a></li>
 						</ul>
-					</li>
-					
-		 			<input type="button" class="btn btn-sm btn-default" id="calendar" value="날짜 선택">
-		 			
+					</li>	
 		 		</div>
-				
 				
         		<div class="top-space" id=top-space style="overflow: scroll; height: 400px;"></div>
         			

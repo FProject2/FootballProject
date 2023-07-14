@@ -93,21 +93,21 @@ public class ReserveModel {
 	  }
 	
 	  @RequestMapping("reserve/reserve_list.do")
-	  public String reserve_list(HttpServletRequest request,
-			  					 HttpServletResponse response) {
+	  public String reserve_list(HttpServletRequest request, HttpServletResponse response) {
 
-			System.out.println("asdf");
 		  try {
 			request.setCharacterEncoding("UTF-8");
 		} catch (Exception e) {}
+		  
 		    String area = request.getParameter("area");
 			if(area==null) {
 				area="서울";
 			}
+			
 			ReserveDAO dao =ReserveDAO.newInstance();
 			List<GroundDetailVO> list = dao.groundCategoryListData(area);
+			
 			request.setAttribute("list", list);
-		  
 		  return "../reserve/reserve_list.jsp";
 	  }
 	
