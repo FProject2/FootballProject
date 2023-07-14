@@ -8,10 +8,7 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="../main/favicon.png">
-	
-<!--Google Font link-->
-<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../main/assets/css/slick/slick.css"> 
 <link rel="stylesheet" href="../main/assets/css/slick/slick-theme.css">
 <link rel="stylesheet" href="../main/assets/css/animate.css">
@@ -20,28 +17,30 @@
 <link rel="stylesheet" href="../main/assets/css/bootstrap.css">
 <link rel="stylesheet" href="../main/assets/css/magnific-popup.css">
 <link rel="stylesheet" href="../main/assets/css/bootsnav.css">
-
 <!--Theme custom css -->
 <link rel="stylesheet" href="../main/assets/css/style.css">
 <!--<link rel="stylesheet" href="assets/css/colors/maron.css">-->
-
 <!--Theme Responsive css-->
 <link rel="stylesheet" href="../main/assets/css/responsive.css" />
-
 <script src="../main/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
+		$('#logAlert').hide();
 		$('#logBtn').click(function() {
 			let id=$('#id').val();
 			if(id.trim()=="")
 			{
+				$('#logAlert').text("아이디를 입력하세요!");
+				$('#logAlert').show();
 				$('#id').focus;
 				return;
 			}
 			
 			let pwd = $('#pwd').val();
 			if(pwd.trim()==""){
+				$('#logAlert').text("비밀번호를 입력하세요!");
+				$('#logAlert').show();
 				$('#pwd').focus;
 				return;
 			}
@@ -53,13 +52,15 @@
 				success:function(result){
 					let res = result.trim();
 					if(res==='NOID'){
-						alert("존재하지 않는 아이디입니다.")
+						$('#logAlert').text("존재하지 않는 아이디입니다!")
+						$('#logAlert').show();
 						$('#id').val("");
 						$('#pwd').val("");
 						$('#id').focus();
 					}
 					else if(res==='NOPWD'){
-						alert("비밀번호가 틀렸습니다.")
+						$('#logAlert').text("비밀번호가 틀렸습니다!")
+						$('#logAlert').show();
 						$('#pwd').val("");
 						$('#pwd').focus();
 					}
@@ -87,15 +88,15 @@
 		border-radius: 30px;
 		padding: 50px;
 	}
-	#join {
+	#join, #logAlert {
 		color: #d9534f;
 	}
-	#join.hover {
+	#ipFound {
+		color: #797979;
+	}
+	
+	#join:hover, #ipFound:hover {
 		text-decoration: underline;
-	}
-	#text {
-		font-size:10px;
-		color: #d9534f;
 	}
 </style>
 </head>
@@ -115,12 +116,17 @@
 					<label class="form-label mt-4 text-left">비밀번호</label>
 					<input type="password" class="form-control" name=pwd id=pwd>
 				</div>
+				
+				<div class="form-group">
+					<span id="logAlert" style="display: none;"></span>
+				</div>
 
 				<div class="d-grip gap-2 text-center" style="margin-top: 10px;">
 					<button class="btn btn-danger btn-lg" id="logBtn">로그인</button>
 				</div>
 				
-				<div class="form-group text-center" style="margin-top: 10px;">
+				<div class="form-group text-center" style="margin-top: 20px;">
+					<label class="form-label" style="display: block;"><a href="#" id="ipFound">아이디 / 비밀번호 찾기</a></label>
 					<label class="form-label">아직 회원이 아니시라면? <a href="../member/join.do" id="join">회원가입</a></label>
 				</div>
 				

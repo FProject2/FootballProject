@@ -82,7 +82,13 @@
 				</ul>
 			</li>
 			
+			<c:if test="${sessionScope.admin=='n' }">
 			<li><a href="#business">마이페이지</a></li>
+			</c:if>
+			
+			<c:if test="${sessionScope.admin=='y' }">
+			<li><a href="#business">관리자페이지</a></li>
+			</c:if>
 			
 			<c:if test="${sessionScope.id==null }">
 			<li><a href="../member/login.do">로그인</a></li>

@@ -215,4 +215,7 @@ public class ShopDAO {
 		
 		return list;
 	}
+	
+	
+	
 }

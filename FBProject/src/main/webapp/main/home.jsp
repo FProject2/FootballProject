@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="favicon.png">
 	
 <!--Google Font link-->
-<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="../main/assets/css/slick/slick.css"> 
 <link rel="stylesheet" href="../main/assets/css/slick/slick-theme.css">
@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="../main/assets/css/bootstrap.css">	
 <link rel="stylesheet" href="../main/assets/css/magnific-popup.css">
 <link rel="stylesheet" href="../main/assets/css/bootsnav.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
 <!--Theme custom css -->
 <link rel="stylesheet" href="../main/assets/css/style.css">
@@ -49,6 +50,7 @@
 <script src="../main/assets/js/bootsnav.js"></script>
 <script src="../main/assets/js/plugins.js"></script>
 <script src="../main/assets/js/main.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 </body>
 </html>

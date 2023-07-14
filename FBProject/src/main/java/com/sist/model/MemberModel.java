@@ -61,6 +61,7 @@ public class MemberModel {
 		request.setAttribute("list", list);
 		return "../member/postfind_result.jsp";
 	}
+	
 	@RequestMapping("member/join_ok.do")
 	public String memberJoinOk(HttpServletRequest request, HttpServletResponse response) {
 		try {
@@ -112,7 +113,9 @@ public class MemberModel {
 		if(vo.getMsg().equals("OK")) {
 			session.setAttribute("id", vo.getId());
 			session.setAttribute("name", vo.getName());
+			session.setAttribute("nickname", vo.getNickname());
 			session.setAttribute("sex", vo.getSex());
+			session.setAttribute("addr1", vo.getAddr1());
 			session.setAttribute("admin", vo.getAdmin());
 			//전역변수 => 모든 JSP에서 사용이 가능
 		}

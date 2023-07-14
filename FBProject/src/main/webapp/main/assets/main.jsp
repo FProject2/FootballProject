@@ -58,12 +58,29 @@
 </style>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+  
 <script type="text/javascript">
 $(function() {
 	let area;
+	
+/* 	let date;
+	$('#calendar').click(function() {
+		let x=(document.body.offsetWidth/2)-(500/2)
+		let y=(window.screen.height/2)-(500/2)
+		window.open("../reserve/calendar.do","",'width=320, height=410, left='+x+', top='+y)
+	}) */
+
     $( "#calendar" ).datepicker();
+	
+	
 	$('.area').click(function(){
-		area=$(this).text();
+		area=$(this).text()
+		
 		$.ajax({
 			type:'post',
 			url:'../reserve/reserve_list.do',
@@ -73,9 +90,9 @@ $(function() {
 			}
 		})
 	})
-	
 	$('.date').click(function(){
 		date=$(this).text()
+		
 		$.ajax({
 			type:'post',
 			url:'../reserve/reserve_list.do',
@@ -95,7 +112,7 @@ $(function() {
 <section id="home" class="home bg-black fix">
 	<div class="overlay"></div>
 
-	<div class="container" style="margin-top: 10px;">
+	<div class="container">
 		<div class="row">
 			<div class="main_home text-center">
 				<div class="col-md-12">
@@ -103,7 +120,7 @@ $(function() {
 					<c:forEach var="i" begin="1" end="5">
 					<div class="slid_item">
 						<div class="home_text ">
-							<img src="../main/assets/images/${i }.jpg" style="width:1920px;height:500px;object-fit: cover;" class="homeslide">
+							<img src="../main/assets/images/${i }.jpg" style="width:1920px;height:600px" class="homeslide">
 						</div>
 					</div><!-- End off slid item -->
 					</c:forEach>  
@@ -122,10 +139,9 @@ $(function() {
                     <h2 class="text-uppercase">구장 예약</h2>
                     <h5>날짜와 지역을 선택하고 구장을 예약하세요</h5>
                 </div>
-                
-                <div class=text-left style="margin-bottom: 20px;">
+                <div class=text-left>
 					<li class="dropdown" style="margin-right: 20px;"><span class="btn btn-sm btn-default">지역 선택</span>
-						<ul class="dropdown-content" style="overflow-y: scroll; height: 300px;">
+						<ul class="dropdown-content">
 							<li><a class="area">서울</a></li>
 							<li><a class="area">경기</a></li>
 							<li><a class="area">인천</a></li>
@@ -146,13 +162,15 @@ $(function() {
 						</ul>
 					</li>
 					
+		
 		 			<input type="button" class="btn btn-sm btn-default" id="calendar" value="날짜 선택">
-		 			
-		 		</div>
-				
-				
-        		<div class="top-space" id=top-space style="overflow: scroll; height: 400px;"></div>
-        			
+
+		
+        		</div>
+	        		
+        		<div class="top-space" id=top-space>
+						
+        		</div>	
       		</div>
 	      
         <!-- reserve-end -->

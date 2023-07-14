@@ -144,7 +144,7 @@ $(function(){
 				</tr>
 				<tr class="text-center">
 					<td width="60%">
-						<a href="#" class="btn btn-lg btn-success" style="width: 200px;">바로구매</a>
+						<a href="../shop/shopOrder.do?gno=${vo.gno }" class="btn btn-lg btn-success" style="width: 200px;">바로구매</a>
 						<a href="#" class="btn btn-lg btn-default" style="width: 200px;">장바구니</a>
 					</td>
 				</tr>
