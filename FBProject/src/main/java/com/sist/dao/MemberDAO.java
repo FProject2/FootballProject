@@ -177,11 +177,89 @@ public class MemberDAO {
 		}
 	}
 	
-	// 회원 수정
-	// 회원 탈퇴
 	// 아이디 찾기
+	public String idEmailFind(String email)
+	{
+		String result = "";
+		
+		try {
+			conn = db.getConnection();
+			
+			String sql = "SELECT COUNT(*) FROM member WHERE email=?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, email);
+			ResultSet rs = ps.executeQuery();
+			
+			rs.next();
+			int count = rs.getInt(1);
+			rs.close();
+			
+			if(count==0)
+			{
+				result="NO";
+			}
+			else {
+				
+				sql = "SELECT RPAD(SUBSTR(id,1,LENGTH(id)-3),LENGTH(id),'*') FROM member WHERE email=?";
+				ps = conn.prepareStatement(sql);
+				ps.setString(1, email);
+				rs = ps.executeQuery();
+				rs.next();
+				result = rs.getString(1);
+				rs.close();
+			}
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			db.disConnection(conn, ps);
+		}
+		
+		return result;
+	}
+	
 	// 비밀번호 찾기
-	// 비밀번호 변경
+	public String pwdFind(String name, String email)
+	{
+		String result = "";
+		
+		try {
+			conn = db.getConnection();
+			
+			String sql = "SELECT COUNT(*) FROM member WHERE name=? AND email=?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, name);
+			ps.setString(2, email);
+			ResultSet rs = ps.executeQuery();
+			
+			rs.next();
+			int count = rs.getInt(1);
+			rs.close();
+			
+			if(count==0)
+			{
+				result="NO";
+			}
+			else {
+				
+				sql = "SELECT RPAD(SUBSTR(id,1,LENGTH(id)-3),LENGTH(id),'*') FROM member WHERE name=? AND email=?";
+				ps = conn.prepareStatement(sql);
+				ps.setString(1, name);
+				ps.setString(2, email);
+				rs = ps.executeQuery();
+				rs.next();
+				result = rs.getString(1);
+				rs.close();
+			}
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			db.disConnection(conn, ps);
+		}
+		
+		return result;
+	}
 	
 	// 로그인
 	public MemberVO memberLogin(String id, String pwd) {

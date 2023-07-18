@@ -98,9 +98,19 @@
 			<li><a href="../member/logout.do">로그아웃</a></li>
 			</c:if>
 			
+			<c:if test="${sessionScope.id!=null }">
 			<c:if test="${bCheck==true }">
 			<li><a href="../shop/shopCart.do">장바구니</a></li>
 			</c:if>
+			</c:if>
+			
+			<!-- 로그인 안했으면 로그인 창으로 -->
+			<c:if test="${sessionScope.id==null }">
+			<c:if test="${bCheck==true }">
+			<li><a href="../member/login.do">장바구니</a></li>
+			</c:if>
+			</c:if>
+			
 		</ul>
 	</div><!-- /.navbar-collapse -->
 	</div>

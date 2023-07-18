@@ -20,7 +20,6 @@
 <link rel="stylesheet" href="../main/assets/css/bootstrap.css">	
 <link rel="stylesheet" href="../main/assets/css/magnific-popup.css">
 <link rel="stylesheet" href="../main/assets/css/bootsnav.css">
-<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
 <!--Theme custom css -->
 <link rel="stylesheet" href="../main/assets/css/style.css">
@@ -30,6 +29,7 @@
 <link rel="stylesheet" href="../main/assets/css/responsive.css" />
 
 <script src="../main/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar-collapse">
@@ -50,7 +50,6 @@
 <script src="../main/assets/js/bootsnav.js"></script>
 <script src="../main/assets/js/plugins.js"></script>
 <script src="../main/assets/js/main.js"></script>
-<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 </body>
 </html>

@@ -71,6 +71,13 @@
 			})
 			
 		})
+		
+		$('#ipFind').click(function() {
+			let x=(document.body.offsetWidth/2)-(500/2)
+			let y=(window.screen.height/2)-(300/2)
+			window.open("../member/ipFind.do","",'width=400, height=250, left='+x+', top='+y)
+		})
+		
 	})
 </script>
 
@@ -79,8 +86,8 @@
 		margin: 0px auto;
 		height: 80vh;
 		padding-top: 200px;
-		
 	}
+	
 	#login {
 		margin: 0px auto;
 		width: 500px;
@@ -88,14 +95,16 @@
 		border-radius: 30px;
 		padding: 50px;
 	}
+	
 	#join, #logAlert {
 		color: #d9534f;
 	}
-	#ipFound {
+	
+	#ipFind {
 		color: #797979;
 	}
 	
-	#join:hover, #ipFound:hover {
+	#join:hover, #ipFind:hover {
 		text-decoration: underline;
 	}
 </style>
@@ -126,7 +135,7 @@
 				</div>
 				
 				<div class="form-group text-center" style="margin-top: 20px;">
-					<label class="form-label" style="display: block;"><a href="#" id="ipFound">아이디 / 비밀번호 찾기</a></label>
+					<label class="form-label" style="display: block;"><a href="#" id="ipFind">아이디 / 비밀번호 찾기</a></label>
 					<label class="form-label">아직 회원이 아니시라면? <a href="../member/join.do" id="join">회원가입</a></label>
 				</div>
 				

@@ -134,4 +134,40 @@ public class MemberModel {
 		
 		return "redirect:../main/main.do";
 	}
+	
+	@RequestMapping("member/ipFind.do")
+	public String idPwdFound(HttpServletRequest request, HttpServletResponse response) {
+		
+		return "../member/ipFind.jsp";
+	}
+	
+	@RequestMapping("member/idFind_ok.do")
+	public void idFind_ok(HttpServletRequest request, HttpServletResponse response) {
+		
+		String email = request.getParameter("email");
+		MemberDAO dao = MemberDAO.newInstance();
+		String res = dao.idEmailFind(email);
+		
+		try {
+			PrintWriter out = response.getWriter();
+			out.println(res);
+		}catch(Exception ex) {}
+		
+	}
+	
+	@RequestMapping("member/pwdFind_ok.do")
+	public void pwdFind_ok(HttpServletRequest request, HttpServletResponse response) {
+		
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		MemberDAO dao = MemberDAO.newInstance();
+		String res = dao.pwdFind(name, email);
+		
+		try {
+			PrintWriter out = response.getWriter();
+			out.println(res);
+		}catch(Exception ex) {}
+	}
+	
+	
 }
