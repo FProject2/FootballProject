@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Football-Play 온라인 스토어</title>
+<link rel="icon" type="image/png" href="../main/favicon.png">
 <style type="text/css">
 	.row {
 		margin: 0px auto;

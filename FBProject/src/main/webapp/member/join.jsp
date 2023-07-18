@@ -8,8 +8,7 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="../main/favicon.png">
-<!--Google Font link-->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="../main/assets/css/slick/slick.css"> 
 <link rel="stylesheet" href="../main/assets/css/slick/slick-theme.css">
 <link rel="stylesheet" href="../main/assets/css/animate.css">

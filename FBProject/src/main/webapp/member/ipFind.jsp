@@ -4,7 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Football-Play 아이디/비밀번호 찾기</title>
+<link rel="icon" type="image/png" href="../main/favicon.png">
+
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -46,10 +48,10 @@ $(function() {
 			return;
 		}
 		
-		let email = $('#email').val();
+		let email = $('#email2').val();
 		if(email.trim()==="")
 		{
-			$('#email').focus();
+			$('#email2').focus();
 			return;
 		}
 		
@@ -72,68 +74,58 @@ $(function() {
 	})
 });
 </script>
-<style type="text/css">
-	.row {
-		margin: 0px auto;
-	}
-</style>
+
 </head>
 <body>
-<div class="container">
-	<div class="row">
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">아이디 찾기</a></li>
+		<li><a href="#tabs-2">비밀번호 찾기</a></li>
+	</ul>
 	
-		<div id="tabs">
-			<ul>
-				<li><a href="#tabs-1">아이디 찾기</a></li>
-				<li><a href="#tabs-2">비밀번호 찾기</a></li>
-			</ul>
-			
-			<div id="tabs-1">
-				<table class="table">
-					<tr>
-						<td class="text-center">
-							이메일 : <input type=text id="email" class="input-sm">
-						</td>
-					</tr>
-					<tr>
-						<td class="text-center">
-							<input type=button class="btn btn-sm btn-default" value="검색" id="idBtn">
-						</td>
-					</tr>
-					<tr>
-						<td class="text-center">
-							<h4 id="id"></h4>
-						</td>
-					</tr>
-				</table>
-			</div>
-			
-			<div id="tabs-2">
-				<table class="table">
-					<tr>
-						<td class="text-center">
-							이름 : <input type=text id="name" class="input-sm">
-						</td>
-					</tr>
-					<tr>
-						<td class="text-center">
-							이메일 : <input type=text id="email" class="input-sm">
-						</td>
-					</tr>
-					<tr>
-						<td class="text-center">
-							<input type=button class="btn btn-sm btn-default" value="검색" id="pwdBtn">
-						</td>
-					</tr>
-					<tr>
-						<td class="text-center">
-							<h4 id="pwd"></h4>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-		
+	<div id="tabs-1">
+		<table class="table">
+			<tr>
+				<td class="text-center">
+					이메일 : <input type=text id="email" class="input-sm">
+				</td>
+			</tr>
+			<tr>
+				<td class="text-center">
+					<input type=button class="btn btn-sm btn-default" value="검색" id="idBtn">
+				</td>
+			</tr>
+			<tr>
+				<td class="text-center">
+					<h4 id="id"></h4>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div id="tabs-2">
+		<table class="table">
+			<tr>
+				<td class="text-center">
+					이름 : <input type=text id="name" class="input-sm">
+				</td>
+			</tr>
+			<tr>
+				<td class="text-center">
+					이메일 : <input type=text id="email2" class="input-sm">
+				</td>
+			</tr>
+			<tr>
+				<td class="text-center">
+					<input type=button class="btn btn-sm btn-default" value="검색" id="pwdBtn">
+				</td>
+			</tr>
+			<tr>
+				<td class="text-center">
+					<h4 id="pwd"></h4>
+				</td>
+			</tr>
+		</table>
 	</div>
 </div>
 </body>
