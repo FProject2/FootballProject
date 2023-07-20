@@ -100,7 +100,7 @@
 			
 			<c:if test="${sessionScope.id!=null }">
 			<c:if test="${bCheck==true }">
-			<li><a href="../shop/shopCart.do">장바구니</a></li>
+			<li><a href="../cart/cart.do">장바구니</a></li>
 			</c:if>
 			</c:if>
 			

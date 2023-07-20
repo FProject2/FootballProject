@@ -73,43 +73,4 @@ public class ShopModel {
 		request.setAttribute("main_jsp", "../shop/shopDetail.jsp");
 		return "../main/home.jsp";
 	}
-	
-	@RequestMapping("shop/shopCart.do")
-	public String shopCart(HttpServletRequest request, HttpServletResponse response) {
-		
-		String gno = request.getParameter("gno");
-		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("id");
-		
-		request.setAttribute("bCheck", true);
-		request.setAttribute("main_jsp", "../shop/shopCart.jsp");
-		return "../main/home.jsp";
-	}
-	
-	@RequestMapping("shop/shopOrder.do")
-	public String shopOrder(HttpServletRequest request, HttpServletResponse response) {
-		
-		String gno = request.getParameter("gno");
-		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("id");
-		
-		ShopDAO dao = ShopDAO.newInstance();
-		
-		
-		request.setAttribute("bCheck", true);
-		request.setAttribute("main_jsp", "../shop/shopOrder.jsp");
-		return "../main/home.jsp";
-	}
-	
-	@RequestMapping("shop/shopCartOrder.do")
-	public String shopCartOrder(HttpServletRequest request, HttpServletResponse response) {
-		
-		String gno = request.getParameter("gno");
-		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("id");
-		
-		request.setAttribute("bCheck", true);
-		request.setAttribute("main_jsp", "../shop/shopOrder.jsp");
-		return "../main/home.jsp";
-	}
 }

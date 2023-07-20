@@ -5,4 +5,5 @@
 	<bean id="shop" class="com.sist.model.ShopModel"/>
 	<bean id="reserve" class="com.sist.model.ReserveModel"/>
 	<bean id="review" class="com.sist.model.ReviewModel"/>
+	<bean id="cart" class="com.sist.model.ShopCartModel"/>
 </beans>

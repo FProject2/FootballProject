@@ -44,6 +44,7 @@
 	}
 	
 	.selected-goods {
+		width: 100%;
 		padding: 10px 20px 10px 20px;
 		background-color: #f5f5f5;
 		font-weight: 600;
@@ -53,21 +54,34 @@
 		text-align: center;
 		margin-top: 70px;
 	}
+	
+	form {
+		display: inline;
+	}
 </style>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('.selected-goods').hide()
-	$('#account').change(function() {
-		$('.selected-goods').show()
-		let price = $('#price').attr("data-price")
-		let account = $(this).val()
-		let total = price * account;
-		let size = $('.size').val()
-		$('#total').text(total)
+	
+	$('#selectedSize').change(function() {
+		let size = $(this).val();
 		$('#size').text(size)
+		
+		$('#account').change(function() {
+			$('.selected-goods').show()
+			let price = $('#price').attr("data-price")
+			let account = $(this).val()
+			let total = price * account;
+			$('#total').text(total)
+			
+			//shopChartModel로 보내는 용도
+			$('.totalprice').val(total);
+			$('.amount').val(account);
+		})
 	})
+			
 })
 </script>
 </head>
@@ -91,7 +105,11 @@ $(function(){
 			</nav>
 		</div>
 		
-		<div class="row" style="margin-top: 80px">
+		<div style="height: 40px;"></div>
+		
+		<hr>
+		
+		<div class="row" style="margin-top: 40px">
 			<table class="detail-data" style="margin-bottom: 30px;">
 				<tr>
 					<td width="50%" rowspan=10 id="goods_image">
@@ -116,7 +134,7 @@ $(function(){
 				</tr>
 				<tr>
 					<td width="50%">사이즈&nbsp;&nbsp;
-						<select class="form-select" style="width: 400px;">
+						<select class="form-select" style="width: 505px;" id="selectedSize">
 							<option selected>&nbsp;- [필수] 옵션을 선택해 주세요 -&nbsp;</option>
 							<c:forEach var="svo" items="${sList }">
 							<option class="size">${svo.gsize }</option>
@@ -126,9 +144,9 @@ $(function(){
 				</tr>
 				<tr>
 					<td width="50%">수량&nbsp;&nbsp;
-						<select class="form-select" style="width: 60px;" id="account">
+						<select class="form-select" style="width: 80px;" id="account">
 							<c:forEach var="i" begin="1" end="10">
-								<option value="${i }">&nbsp;${i }개</option>
+								<option value="${i }">&nbsp;&nbsp;&nbsp;${i }개</option>
 							</c:forEach>
 						</select>
 					</td>
@@ -144,12 +162,34 @@ $(function(){
 				</tr>
 				<tr class="text-center">
 					<td width="60%">
-						<a href="../shop/shopOrder.do?gno=${vo.gno }" class="btn btn-lg btn-success" style="width: 200px;">바로구매</a>
-						<a href="#" class="btn btn-lg btn-default" style="width: 200px;">장바구니</a>
+						
+						<!-- 로그인이 안됐으면 로그인 페이지로 이동 -->
+						<c:if test="${sessionScope.id==null }">
+							<a href="../member/login.do" type=submit class="btn btn-lg btn-success" style="width: 200px;">바로구매</a>
+							<a href="../member/login.do" type=submit class="btn btn-lg btn-default" style="width: 200px;">장바구니</a>
+						</c:if>
+						
+						<c:if test="${sessionScope.id!=null }">
+							<form method="post" action="../cart/cartOrder.do">
+								<input type=submit class="btn btn-lg btn-success" style="width: 200px;" value="바로구매" id="orderBtn">
+								<input type=hidden name="gno" value="${vo.gno }">
+								<input type=hidden name="price" value="" class="totalprice">
+								<input type=hidden name="amount" value="" class="amount">
+							</form>
+							
+							<form method="post" action="../cart/cartInsert.do">
+								<input type=submit class="btn btn-lg btn-default" style="width: 200px;" value="장바구니" id="cartBtn">
+								<input type=hidden name="gno" value="${vo.gno }">
+								<input type=hidden name="price" value="" class="totalprice">
+								<input type=hidden name="amount" value="" class="amount">
+							</form>
+						</c:if>
+						
 					</td>
 				</tr>
 			</table>
 		</div>
+		
 		<hr>
 		
 		<div style="height: 50px;"></div>

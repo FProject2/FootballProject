@@ -280,7 +280,7 @@ public class MemberDAO {
 			if(count==0) {
 				vo.setMsg("NOID");
 			} else {
-				sql="SELECT pwd,name,admin,sex "
+				sql="SELECT pwd, name, admin, sex, phone, post, addr1 "
 				  + "FROM member "
 				  + "WHERE id=?";
 				ps=conn.prepareStatement(sql);
@@ -291,6 +291,9 @@ public class MemberDAO {
 				String name=rs.getString(2);
 				String admin=rs.getString(3);
 				String sex=rs.getString(4);
+				String phone = rs.getString(5);
+				String post = rs.getString(6);
+				String addr1 = rs.getString(7);
 				rs.close();
 				
 				if(db_pwd.equals(pwd)) { 
@@ -299,6 +302,9 @@ public class MemberDAO {
 					vo.setAdmin(admin);
 					vo.setSex(sex);
 					vo.setMsg("OK");
+					vo.setPhone(phone);
+					vo.setPost(post);
+					vo.setAddr1(addr1);
 				} else {
 					vo.setMsg("NOPWD");
 				}

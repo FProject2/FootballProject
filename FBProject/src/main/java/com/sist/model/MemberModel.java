@@ -115,7 +115,9 @@ public class MemberModel {
 			session.setAttribute("name", vo.getName());
 			session.setAttribute("nickname", vo.getNickname());
 			session.setAttribute("sex", vo.getSex());
+			session.setAttribute("post", vo.getPost());
 			session.setAttribute("addr1", vo.getAddr1());
+			session.setAttribute("phone", vo.getPhone());
 			session.setAttribute("admin", vo.getAdmin());
 			//전역변수 => 모든 JSP에서 사용이 가능
 		}
