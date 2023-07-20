@@ -16,16 +16,8 @@
 		padding: 30px;
 	}
 	
-	.table {
-		vertical-align: middle;
-	}
-	
 	form {
 		display: inline;
-	}
-	
-	.table > tr {
-		vertical-align: middle;
 	}
 </style>
 <script type="text/javascript" src="https://code.jquery.com/jquery.js" ></script>
@@ -57,11 +49,11 @@
 					<td width=20% class="text-center">
 						<img src="${vo.goods_poster }" style="width: 80px; height: 80px;">
 					</td>
-					<td width=40%>${vo.goods_name }</td>
-					<td width=10% class="text-center">${vo.price }</td>
-					<td width=10% class="text-center">${vo.amount }</td>
-					<td width=10% class="text-center">${vo.tprice }</td>
-					<td width=10% class="text-center">
+					<td width=40% style="vertical-align: middle;">${vo.goods_name }</td>
+					<td width=10% class="text-center" style="vertical-align: middle;">${vo.price }</td>
+					<td width=10% class="text-center" style="vertical-align: middle;">${vo.amount }</td>
+					<td width=10% class="text-center" style="vertical-align: middle;">${vo.tprice }</td>
+					<td width=10% class="text-center" style="vertical-align: middle;">
 						<form method="post" action="../cart/cartOrder.do">
 							<input type=submit class="btn btn-sm btn-default" value="구매" id="buyBtn">
 							<input type=hidden name="gno" value="${vo.gno }">

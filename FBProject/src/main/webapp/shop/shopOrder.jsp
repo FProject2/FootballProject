@@ -21,10 +21,6 @@
 	#order {
 		padding-left: 740px;
 	}
-	
-	.table > tr {
-		vertical-align: middle;
-	}
 </style>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery.js" ></script>
@@ -97,23 +93,21 @@ function requestPay() {
 			<h3 style="margin-bottom: 20px">주문 상품</h3>
 			<table class="table">
 				<tr class="success">
-					<th width=20%></th>
+					<th width=30%></th>
 					<th width=40% class="text-center">상품명</th>
 					<th width=10% class="text-center">가격</th>
 					<th width=10% class="text-center">수량</th>
 					<th width=10% class="text-center">Total</th>
-					<th width=10%></th>
 				</tr>
 				<c:forEach var="vo" items="${list }">
 					<tr style="padding: 10px;">
-						<td width=20%>
-							<img src="${vo.goods_poster }" style="width: 80px; height: 80px;">
+						<td width=30%>
+							<img src="${vo.goods_poster }" style="width: 100px; height: 100px;">
 						</td>
-						<td width=40% class="text-center">${vo.goods_name }</td>
-						<td width=10% class="text-center">${vo.price }</td>
-						<td width=10% class="text-center">${vo.amount }</td>
-						<td width=10% class="text-center total">${vo.tprice }</td>
-						<td width=10%></td>
+						<td width=40% class="text-center" style="vertical-align: middle;">${vo.goods_name }</td>
+						<td width=10% class="text-center" style="vertical-align: middle;">${vo.price }</td>
+						<td width=10% class="text-center" style="vertical-align: middle;">${vo.amount }</td>
+						<td width=10% class="text-center total" style="vertical-align: middle;">${vo.tprice }</td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -122,11 +116,6 @@ function requestPay() {
 		<div class="row1 buyForm" >
 			<h3 style="margin-bottom: 20px">주문자 정보</h3>
 			<table class="table" style="margin-bottom: 20px;">
-				<tr>
-					<td colspan=4>
-						<input type=button class="btn btn-sm btn-default" value="회원 정보와 동일" id=memberBtn>
-					</td>
-				</tr>
 				<tr>
 					<th width=10% class="success text-center">이름</th>
 					<td width=40%>

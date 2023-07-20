@@ -145,6 +145,7 @@ $(function(){
 				<tr>
 					<td width="50%">수량&nbsp;&nbsp;
 						<select class="form-select" style="width: 80px;" id="account">
+							<option selected>&nbsp;----------&nbsp;</option>
 							<c:forEach var="i" begin="1" end="10">
 								<option value="${i }">&nbsp;&nbsp;&nbsp;${i }개</option>
 							</c:forEach>
