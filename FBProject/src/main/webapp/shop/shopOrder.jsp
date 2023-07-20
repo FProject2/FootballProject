@@ -134,10 +134,7 @@ function requestPay() {
 					</td>
 					<th width=10% class="success text-center">연락처</th>
 					<td width=40%>
-						<select name=phone1>
-		  					<option>010</option>
-		  				</select>
-						<input type="text" class="form-control-sm" name=phone id=phone placeholder=" -를 제외하고 입력하세요" value="${sessionScope.phone }">
+						<input type="text" class="form-control-sm" name=phone id=phone placeholder=" -를 포함해서 입력하세요 " value="${sessionScope.phone }">
 					</td>
 				</tr>
 				<tr>

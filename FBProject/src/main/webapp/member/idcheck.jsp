@@ -9,12 +9,26 @@
 <style type="text/css">
 	.row{
 		margin:0px auto;
-		width:300px;
+		width:450px;
+		background-color: #DCDCDC;
+		border-radius: 30px;
+		padding: 30px;
 	}
+	
 	.container{
 		margin-top: 20px;
 	}
+	
+	.form, .resFrm {
+		text-align: center;
+	}
+	
+	.form-label {
+		font-size: 18px;
+	}
+	
 </style>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
 	$(function(){
@@ -37,14 +51,14 @@
 					if(count==0){
 						$('#okBtn').show();
 						$('#res').html(
-							'<span style="color:blue">'
+							'<span style="color:#0000CD">'
 							+id+'는(은) 사용 가능한 아이디입니다!</span>'
 						)
 						//$('#id').prop('disabled', true);
 					} else {
 						$('#okBtn').hide();
 						$('#res').html(
-							'<span style="color:red">'
+							'<span style="color:#d9534f">'
 							+id+'는(은) 이미 사용중인 아이디입니다!</span>'
 						)
 						$('#id').val("")
@@ -65,24 +79,23 @@
 <body>
 	<div class=container>
 		<div class=row>
-			<table class=table>
-				<tr>
-					<td>
-						ID:<input type=text name=id id=id size=15 class=input-sm>
-						<input type=button value=중복체크 class="btn btn-sm btn-warning" id=checkBtn>
-					</td>
-				</tr>
-				<tr>
-					<td class=text-center id="res">
-					
-					</td>
-				</tr>
-				<tr>
-					<td class=text-center>
-						<input type=button value="확인" id="okBtn" class="btn btn-sm btn-primary">
-					</td>
-				</tr>
-			</table>
+			
+			<label class="form-label mt-4 text-left">아이디 중복 검사</label>
+			
+			<div class="form inline" style="margin: 10px 0px 20px 0px;">
+				
+				<input type=text class="input-sm" name=id id=id placeholder="아이디를 입력하세요.">
+				<input type=button class="btn btn-sm btn-danger" id=checkBtn value="중복체크">
+			</div>
+			
+			<div class="resFrm">
+				<span style="text-align: center" id="res"></span>
+				
+				<div class="resBtn">
+					<input type=button value="사용하기" id="okBtn" class="btn btn-sm btn-danger" style="width: 100px; margin-top: 10px;">
+				</div>
+			</div>
+			
 		</div>
 	</div>
 </body>

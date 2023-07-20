@@ -66,7 +66,7 @@ public class MemberModel {
 	public String memberJoinOk(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			request.setCharacterEncoding("UTF-8");
-		} catch (Exception e) {	}
+		} catch (Exception e) {}
 		String id=request.getParameter("id");
 		String pwd=request.getParameter("pwd");
 		String name=request.getParameter("name");
@@ -90,14 +90,14 @@ public class MemberModel {
 		vo.setPost(post);
 		vo.setAddr1(addr1);
 		vo.setAddr2(addr2);
-		vo.setPhone(phone1+"-"+phone);
+		vo.setPhone(phone);
 		vo.setNickname(nickname);
 		
 		MemberDAO dao=MemberDAO.newInstance();
 		dao.memberInsert(vo);
 		
 		//이동
-		return "redirect:../main/main.do";
+		return "redirect:../member/login.do";
 	}
 	
 	@RequestMapping("member/login_ok.do")

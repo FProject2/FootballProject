@@ -31,7 +31,7 @@ $(function() {
 				let res = result.trim();
 				if(res==='NO')
 				{
-					$('#id').html('<span style="color:red">존재하지 않는 이메일입니다.</span>')
+					$('#id').html('<span style="color:#d9534f">존재하지 않는 이메일입니다.</span>')
 				}
 				else {
 					$('#id').html('<span style="color:black">'+res+'</span>')
@@ -64,7 +64,7 @@ $(function() {
 				let res = result.trim();
 				if(res==='NO')
 				{
-					$('#pwd').html('<span style="color:red">이름이나 이메일이 존재하지 않습니다.</span>')
+					$('#pwd').html('<span style="color:#d9534f">이름이나 이메일이 존재하지 않습니다.</span>')
 				}
 				else {
 					$('#pwd').html('<span style="color:black">'+res+'</span>')
