@@ -17,7 +17,7 @@
 	#navbar {
 		text-align: center;
 		margin-top: 25px;
-		margin-left: 65px;
+		margin-left: 90px;
 	}
 	
 	.nav-item {
