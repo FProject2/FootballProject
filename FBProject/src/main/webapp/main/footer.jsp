@@ -84,7 +84,7 @@
 	                                        <li class="m-top-20"><a href="#test"><i class="fa fa-angle-right"></i> 지역별 맛집</a></li>
 	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 공지사항</a></li>
 	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 문의사항</a></li>
-	                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 쇼핑몰</a></li>
+	                                        <li class="m-top-20"><a href="../shop/shop.do"><i class="fa fa-angle-right"></i> 쇼핑몰</a></li>
                                         </ul>
                                    	</div>
                                     
@@ -93,8 +93,7 @@
 
                             <div class="col-md-3">
                                 <div class="widget_item widget_newsletter sm-m-top-50">
-                                	<h4><b style="color: white;">Football-Play</b></h4>
-                                    <img src="../main/assets/images/shop_icon.png" width=220px height=100px>
+                                    <img src="../main/assets/images/logo.png" style="width: 70%">
 
                                 </div><!-- End off widget item -->
                             </div><!-- End off col-md-3 -->

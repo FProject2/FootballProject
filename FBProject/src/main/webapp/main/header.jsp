@@ -61,7 +61,7 @@
 		</button>
 		
 		<a class="navbar-brand" href="../main/main.do">
-			<!-- <img src="assets/images/logo.png" class="logo" alt=""> --><h4><b>Football-Play</b></h4>
+			<img src="../main/assets/images/logo.png" class="logo">
 		</a>
 	</div>
 	<!-- End Header Navigation -->
