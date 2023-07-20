@@ -242,7 +242,7 @@ public class MemberDAO {
 			}
 			else {
 				
-				sql = "SELECT RPAD(SUBSTR(id,1,LENGTH(id)-3),LENGTH(id),'*') FROM member WHERE name=? AND email=?";
+				sql = "SELECT RPAD(SUBSTR(pwd,1,LENGTH(pwd)-3),LENGTH(pwd),'*') FROM member WHERE name=? AND email=?";
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, name);
 				ps.setString(2, email);

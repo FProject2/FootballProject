@@ -41,6 +41,10 @@
     list-style: none;
 }
 
+#id, #pwd {
+	text-align: center;
+	font-size : 14px;
+}
 </style>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
@@ -111,7 +115,7 @@ $(function() {
 <div class="container mt-3">
 
   <!-- Nav pills -->
-  <ul class="nav nav-pills" role="tablist" style="margin-top: 20px;">
+  <ul class="nav nav-pills" role="tablist" style="margin: 20px 0px 10px 0px;">
     <li class="nav-item">
       <a class="nav-link active" data-bs-toggle="pill" href="#home">아이디 찾기</a>
     </li>
@@ -131,15 +135,11 @@ $(function() {
 				</tr>
 				<tr>
 					<td class="text-center">
-						<input type=button class="btn btn-sm btn-default" value="검색" id="idBtn">
-					</td>
-				</tr>
-				<tr>
-					<td class="text-center">
-						<h4 id="id"></h4>
+						<input type=button class="btn btn-sm btn-outline-success" value="검색" id="idBtn">
 					</td>
 				</tr>
 			</table>
+			<span id="id"></span>
 		</div>
 		
 		<div id="menu1" class="container tab-pane"><br>
@@ -156,15 +156,11 @@ $(function() {
 				</tr>
 				<tr>
 					<td class="text-center">
-						<input type=button class="btn btn-sm btn-default" value="검색" id="pwdBtn">
-					</td>
-				</tr>
-				<tr>
-					<td class="text-center">
-						<h4 id="pwd"></h4>
+						<input type=button class="btn btn-sm btn-outline-success" value="검색" id="pwdBtn">
 					</td>
 				</tr>
 			</table>
+			<span id="pwd"></span>
 		</div>
 	</div>
 </div>

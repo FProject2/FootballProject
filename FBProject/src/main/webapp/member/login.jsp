@@ -75,7 +75,7 @@
 		$('#ipFind').click(function() {
 			let x=(document.body.offsetWidth/2)-(500/2)
 			let y=(window.screen.height/2)-(250/2)
-			window.open("../member/ipFind.do","",'width=400, height=280, left='+x+', top='+y)
+			window.open("../member/ipFind.do","",'width=420, height=300, left='+x+', top='+y)
 		})
 		
 	})
