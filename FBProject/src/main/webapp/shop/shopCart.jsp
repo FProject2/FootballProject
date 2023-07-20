@@ -63,7 +63,7 @@
 					<td width=10% class="text-center">${vo.tprice }</td>
 					<td width=10% class="text-center">
 						<form method="post" action="../cart/cartOrder.do">
-							<input type=submit class="btn btn-sm btn-success" value="구매" id="buyBtn">
+							<input type=submit class="btn btn-sm btn-default" value="구매" id="buyBtn">
 							<input type=hidden name="gno" value="${vo.gno }">
 							<input type=hidden name="price" value="${vo.tprice }" id="totalprice">
 							<input type=hidden name="amount" value="${vo.amount }" id="amount">
