@@ -73,9 +73,9 @@
 		})
 		
 		$('#ipFind').click(function() {
-			let x=(document.body.offsetWidth/2)-(400/2)
-			let y=(window.screen.height/2)-(180/2)
-			window.open("../member/ipFind.do","",'width=400, height=180, left='+x+', top='+y)
+			let x=(document.body.offsetWidth/2)-(500/2)
+			let y=(window.screen.height/2)-(250/2)
+			window.open("../member/ipFind.do","",'width=400, height=280, left='+x+', top='+y)
 		})
 		
 	})
