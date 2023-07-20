@@ -35,10 +35,6 @@ public class ShopCartModel {
 		String tprice = request.getParameter("price");
 		String amount = request.getParameter("amount");
 		
-		System.out.println(gno);
-		System.out.println(tprice);
-		System.out.println(amount);
-		
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
 		
@@ -104,6 +100,10 @@ public class ShopCartModel {
 	
 	@RequestMapping("cart/orderComplete.do")
 	public String shopOrderComplete(HttpServletRequest request, HttpServletResponse response) {
+		
+		String ono = request.getParameter("ono");
+		ShopCartDAO dao = ShopCartDAO.newInstance();
+		dao.cartBuy(Integer.parseInt(ono));
 		
 		request.setAttribute("bCheck", true);
 		request.setAttribute("main_jsp", "../shop/shopOrderComplete.jsp");
